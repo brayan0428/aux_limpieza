@@ -21,7 +21,7 @@ export class RegistroPage implements OnInit {
 
 
   ngOnInit() {
-    this.consultasService.getCiudades().subscribe((data: any) => {
+    this.consultasService.obtenerCiudades().subscribe((data: any) => {
       this.ciudades = data
     })
   }

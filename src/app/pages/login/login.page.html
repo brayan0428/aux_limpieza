@@ -2,6 +2,21 @@
 
 <ion-content>   
     <app-title-page title="Iniciar Sesión"></app-title-page>
+    <ion-content padding>
+        <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin.value)">
+            <ion-item>
+                <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="email" name="correo" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input type="password" name="clave" ngModel required></ion-input>
+            </ion-item>
+            <ion-button expand="full" type="submit" [disabled]="formLogin.invalid">
+                Iniciar Sesión
+            </ion-button>
+        </form>
+    </ion-content>
     <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 

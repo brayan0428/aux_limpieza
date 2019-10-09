@@ -5,7 +5,7 @@
   <ion-content padding>
       <form #formulario="ngForm" (ngSubmit)="guardarUsuario(formulario.value)">
           <ion-item>
-            <ion-label position="floating">Nombres</ion-label>
+            <ion-label position="floating">Nombres<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="text"
                         name="nombres"
                         ngModel
@@ -15,7 +15,7 @@
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Apellidos</ion-label>
+            <ion-label position="floating">Apellidos<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="text"
                         name="apellidos"
                         ngModel
@@ -25,7 +25,7 @@
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Dirección</ion-label>
+            <ion-label position="floating">Dirección<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="text"
                         name="direccion"
                         ngModel
@@ -33,14 +33,14 @@
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label>Ciudad</ion-label>
+            <ion-label>Ciudad<ion-text color="danger">*</ion-text></ion-label>
             <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
                 <ion-select-option value="">Seleccione</ion-select-option>
                 <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.nombre}}</ion-select-option>
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Telefono / Celular</ion-label>
+            <ion-label position="floating">Telefono / Celular<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="number"
                         name="telefono"
                         required
@@ -49,7 +49,7 @@
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Email</ion-label>
+            <ion-label position="floating">Email<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="email"
                         name="correo"
                         required
@@ -58,7 +58,7 @@
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Clave</ion-label>
+            <ion-label position="floating">Clave<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="password"
                         name="clave"
                         ngModel
@@ -66,7 +66,7 @@
             </ion-input>
           </ion-item>
           <ion-item>
-          <ion-label position="floating">Confirmar Clave</ion-label>
+          <ion-label position="floating">Confirmar Clave<ion-text color="danger">*</ion-text></ion-label>
             <ion-input type="password"
                         name="confirmarClave"
                         ngModel

@@ -10,6 +10,10 @@ export class SolicitarServicioPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(localStorage.getItem('idUser'))
   }
 
+  ionViewDidEnter(){
+    
+  }
 }
