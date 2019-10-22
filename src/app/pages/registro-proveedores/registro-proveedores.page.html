@@ -1,0 +1,168 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-title-page title="Registro Proveedores"></app-title-page>
+  <ion-content padding>
+    <form #formulario="ngForm" (ngSubmit)="guardarProveedor(formulario.value)">
+      <ion-item>
+        <ion-label position="floating">Cedula<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="number"
+                    name="cedula"
+                    ngModel
+                    required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombres<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text"
+                    name="nombres"
+                    ngModel
+                    required
+                    class="ion-text-uppercase"
+                    >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text"
+                    name="apellidos"
+                    ngModel
+                    required
+                    class="ion-text-uppercase"
+                    >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Dirección<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="direccion"
+                      ngModel
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ciudad<ion-text color="danger">*</ion-text></ion-label>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
+              <ion-select-option value="">Seleccione</ion-select-option>
+              <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="email"
+                      name="correo"
+                      required
+                      ngModel
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input type="number"
+                      name="telefono"
+                      ngModel
+                      maxlength="7"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Celular<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number"
+                      name="celular"
+                      required
+                      ngModel
+                      maxlength="10"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Whatsapp</ion-label>
+          <ion-input type="number"
+                      name="whatsapp"
+                      ngModel
+                      maxlength="10"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Especialidad<ion-text color="danger">*</ion-text></ion-label>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="especialidad" required>
+              <ion-select-option value="">Seleccione</ion-select-option>
+              <ion-select-option *ngFor="let especialidad of especialidades" [value]="especialidad.codigo">{{especialidad.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Estudios Realizados</ion-label>
+          <ion-textarea name="estudios_realizados"
+                        required
+                        ngModel
+                        value="">
+          </ion-textarea>
+        </ion-item>
+        <h5>Referencia personal</h5>
+        <ion-item>
+          <ion-label position="floating">Nombre<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="nombre_referencia_personal"
+                      ngModel
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number"
+                      name="telefono_referencia_personal"
+                      required
+                      ngModel
+                      maxlength="10"
+                      >
+          </ion-input>
+        </ion-item>
+        <h5>Referencia familiar</h5>
+        <ion-item>
+          <ion-label position="floating">Nombre<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="nombre_referencia_familiar"
+                      ngModel
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number"
+                      name="telefono_referencia_familiar"
+                      required
+                      maxlength="10"
+                      ngModel
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Clave<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="password"
+                      name="clave"
+                      ngModel
+                      required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label position="floating">Confirmar Clave<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="password"
+                      name="confirmarClave"
+                      ngModel
+                      required>
+          </ion-input>
+        </ion-item>
+        <ion-button type="submit" [disabled]="formulario.invalid" expand="full">Enviar</ion-button>
+    </form>
+  </ion-content>
+  <app-fab-whatsapp></app-fab-whatsapp>
+</ion-content>
+
+<app-footer></app-footer>

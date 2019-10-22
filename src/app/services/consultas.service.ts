@@ -5,12 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ConsultasService {
-  //private url:string = 'https://api-aux-limpieza.herokuapp.com'
-  private url:string = 'http://localhost:3000'
+  private url:string = 'https://api-auxlimpieza.herokuapp.com'
+  //private url:string = 'http://localhost:3001'
   constructor(private http:HttpClient) { }
 
   obtenerCiudades(){
     return this.http.get(`${this.url}/ciudades`)
+  }
+
+  obtenerEspecialidades(){
+    return this.http.get(`${this.url}/especialidades`)
   }
 
   validarLogin(user){

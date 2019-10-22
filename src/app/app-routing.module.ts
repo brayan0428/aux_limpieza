@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'se-enfermeros', loadChildren: './pages/se-enfermeros/se-enfermeros.module#SeEnfermerosPageModule' },
   { path: 'se-jardineros', loadChildren: './pages/se-jardineros/se-jardineros.module#SeJardinerosPageModule' },
   { path: 'se-mecanicos', loadChildren: './pages/se-mecanicos/se-mecanicos.module#SeMecanicosPageModule' },
+  { path: 'registro-proveedores', loadChildren: './pages/registro-proveedores/registro-proveedores.module#RegistroProveedoresPageModule' },
 ];
 
 @NgModule({
