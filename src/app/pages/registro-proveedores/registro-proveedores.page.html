@@ -159,6 +159,13 @@
                       required>
           </ion-input>
         </ion-item>
+        <ion-item (click)="abrirTerminos()">
+          <h6><u>Terminos y condiciones</u></h6>
+        </ion-item>
+        <ion-item>
+          <ion-label>Acepto</ion-label>
+          <ion-checkbox required checked="false" name="acepta_terminos" ngModel></ion-checkbox>
+        </ion-item>
         <ion-button type="submit" [disabled]="formulario.invalid" expand="full">Enviar</ion-button>
     </form>
   </ion-content>

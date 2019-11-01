@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import {HttpClientModule} from '@angular/common/http';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import {File} from '@ionic-native/File/ngx';
+import {FileOpener} from '@ionic-native/file-opener/ngx';
+import {FileTransfer} from '@ionic-native/file-transfer/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +23,12 @@ import {HttpClientModule} from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    DocumentViewer,
+    File,
+    FileOpener,
+    FileTransfer,
+	Vibration
   ],
   bootstrap: [AppComponent]
 })
