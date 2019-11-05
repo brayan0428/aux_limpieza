@@ -99,7 +99,7 @@ const routes: Routes = [
       "./pages/registro-proveedores/registro-proveedores.module#RegistroProveedoresPageModule"
   },
   {
-    path: "solicitud-servicio",
+    path: "solicitud-servicio/:servicio",
     loadChildren:
       "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule"
   }

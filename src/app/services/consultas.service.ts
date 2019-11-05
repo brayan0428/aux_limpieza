@@ -21,4 +21,7 @@ export class ConsultasService {
     return this.http.post(`${this.url}/usuario`,user)
   }
 
+  obtenerServicios(){
+    return this.http.get(`${this.url}/servicios`)
+  }
 }

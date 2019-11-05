@@ -6,9 +6,9 @@
       <ion-item>
         <ion-label>Servicio Escogido<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="servicio" required>
+        <ion-select disabled [value]="servicio" okText="Ok" cancelText="Cancelar" ngModel name="servicio" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option value="S001">Limpieza</ion-select-option>
+          <ion-select-option *ngFor="let servicio of servicios" [value]="servicio.codigo">{{servicio.descripcion}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
@@ -30,24 +30,16 @@
       <ion-item>
         <ion-label>Duración (Horas)<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="duracion" required>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="horas" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option *ngFor="let hora of horas">{{hora}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label>Hora de Inicio<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-datetime display-format="HH:MM" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
+        <ion-datetime display-format="HH:mm" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
         </ion-datetime>
-      </ion-item>
-      <ion-item>
-        <h6><b>EMPLEADA</b></h6>
-      </ion-item>
-      <ion-item>
-        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="empleada" required>
-          <ion-select-option value="x">Asignada por el sistema</ion-select-option>
-        </ion-select>
       </ion-item>
       <br>
       <ion-button expand="full" type="submit" [disabled]="formSolicitud.invalid">

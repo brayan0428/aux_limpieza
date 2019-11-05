@@ -18,4 +18,8 @@ export class ProcesosService {
   guardarProveedor(proveedor){
     return this.http.post(`${this.url}/proveedores`, proveedor)
   }
+
+  guardarServicio(servicio){
+    return this.http.post(`${this.url}/servicio`, servicio)
+  }
 }
