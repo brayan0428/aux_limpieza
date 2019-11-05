@@ -1,0 +1,58 @@
+<app-header></app-header>
+<ion-content>
+  <app-title-page title="Solicitud de Servicio"></app-title-page>
+  <ion-content padding>
+    <form #formSolicitud="ngForm" (ngSubmit)="solicitarServicio(formSolicitud.value)">
+      <ion-item>
+        <ion-label>Servicio Escogido<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="servicio" required>
+          <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select-option value="S001">Limpieza</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Usuario<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="usuario" required>
+          <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select-option value="2">Brayan Llanos</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tiempo de Servicio<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-datetime display-format="DD/MM/YYYY" placeholder="Inicio" cancelText="Cancelar" ngModel
+          name="fecha_inicio"></ion-datetime>
+        <ion-datetime display-format="DD/MM/YYYY" placeholder="Fin" cancelText="Cancelar" ngModel name="fecha_fin">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Duración (Horas)<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="duracion" required>
+          <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select-option value="1">1</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hora de Inicio<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-datetime display-format="HH:MM" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <h6><b>EMPLEADA</b></h6>
+      </ion-item>
+      <ion-item>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="empleada" required>
+          <ion-select-option value="x">Asignada por el sistema</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-button expand="full" type="submit" [disabled]="formSolicitud.invalid">
+        Continuar
+      </ion-button>
+    </form>
+  </ion-content>
+</ion-content>

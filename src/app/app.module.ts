@@ -14,7 +14,6 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import {File} from '@ionic-native/File/ngx';
 import {FileOpener} from '@ionic-native/file-opener/ngx';
 import {FileTransfer} from '@ionic-native/file-transfer/ngx';
-import { Vibration } from '@ionic-native/vibration/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,8 +26,7 @@ import { Vibration } from '@ionic-native/vibration/ngx';
     DocumentViewer,
     File,
     FileOpener,
-    FileTransfer,
-	Vibration
+    FileTransfer
   ],
   bootstrap: [AppComponent]
 })
