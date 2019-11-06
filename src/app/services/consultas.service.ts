@@ -1,12 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
+import {URL_API} from '../../environments/environment'
 @Injectable({
   providedIn: "root"
 })
 export class ConsultasService {
-  private url: string = "https://api-auxlimpieza.herokuapp.com";
-  //private url:string = 'http://localhost:3001'
+  private url: string = URL_API;
   constructor(private http: HttpClient) {}
 
   obtenerCiudades() {
@@ -31,5 +30,9 @@ export class ConsultasService {
 
   obtenerEspecialidadesxGrupo(id: string) {
     return this.http.get(`${this.url}/especialidadesxgrupo/${id}`);
+  }
+
+  obtenerValorServicio(data){
+    return this.http.post(`${this.url}/valorservicio`,data);
   }
 }

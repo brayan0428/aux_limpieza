@@ -3,6 +3,7 @@ import { ConsultasService } from 'src/app/services/consultas.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { NavController } from '@ionic/angular';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -34,8 +35,12 @@ export class LoginPage implements OnInit {
           return
         }
       }
-      console.log(data[0]["id"])
-      localStorage.setItem('idUser',data[0]["id"])
+      UserService.loggedUser = true
+      UserService.idUser = data[0]["id"]
+      UserService.nombresUser = data[0]["nombres"]
+      UserService.apellidosUser = data[0]["apellidos"]
+      UserService.correoUser = data[0]["correo"]
+      
       this.navCtrl.navigateRoot('/solicitar-servicio')
     })
   }

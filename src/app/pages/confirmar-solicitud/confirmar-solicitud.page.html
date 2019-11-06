@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-title-page title="Confirmar Solicitud"></app-title-page>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Servicio {{solicitud.nombreServicio}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <b>Fecha Inicio: </b> {{solicitud.fecha_inicio}} <br>
+        <b>Fecha Fin: </b> {{solicitud.fecha_fin}} <br>
+        <b>Cantidad Dias: </b> {{solicitud.cantidad_dias}} <br>
+        <hr>
+        <b>Hora Inicio: </b> {{solicitud.hora_inicio}} <br>
+        <b>Hora Fin: </b> {{solicitud.hora_fin}} <br>
+        <b>Cantidad Horas: </b> {{solicitud.horas}} <br>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Valor Servicio</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <b>Valor Dia: </b> {{valorxDia}} <br>
+          <b>Subtotal: </b> {{subtotal}} <br>
+          <b>Descuento {{porcentajeDescuento}}%: </b> {{descuento}} <br>
+          <b>Total: </b> {{total}} <br>
+          <hr>
+        </ion-card-content>
+      </ion-card>
+  <app-fab-whatsapp></app-fab-whatsapp>
+</ion-content>
+
+<app-footer></app-footer>

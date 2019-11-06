@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from "@angular/core";
+import { Component, OnInit, DoCheck, AfterContentInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
 
 @Component({
@@ -15,6 +15,6 @@ export class MenuComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
-    this.userLogged = UserService.idUser;
+    this.userLogged = UserService.loggedUser;
   }
 }

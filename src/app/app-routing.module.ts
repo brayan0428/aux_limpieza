@@ -107,7 +107,8 @@ const routes: Routes = [
     path: "grupos-servicios-especiales",
     loadChildren:
       "./pages/grupos-servicios-especiales/grupos-servicios-especiales.module#GruposServiciosEspecialesPageModule"
-  }
+  },  { path: 'confirmar-solicitud', loadChildren: './pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule' }
+
 ];
 
 @NgModule({

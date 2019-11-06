@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ConsultasService } from "src/app/services/consultas.service";
 import * as moment from 'moment';
 import { ToastService } from 'src/app/services/toast.service';
+import { ConfirmarSolicitudPage } from '../confirmar-solicitud/confirmar-solicitud.page';
+import { NavController } from '@ionic/angular';
+import { Servicio } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: "app-solicitud-servicio",
@@ -12,13 +15,14 @@ import { ToastService } from 'src/app/services/toast.service';
 
 export class SolicitudServicioPage implements OnInit {
   servicio:string;
-  servicios:[];
+  servicios:any[];
   xServicio:Servicio;
 
   horas = [2,3,4,6,8]
   constructor(private route:ActivatedRoute,
               private consultasService: ConsultasService,
-              private toast: ToastService) {}
+              private toast: ToastService,
+              public navCtrl:NavController) {}
 
   ngOnInit() {
     this.consultasService.obtenerServicios().subscribe((data:any) => {
@@ -32,7 +36,6 @@ export class SolicitudServicioPage implements OnInit {
     var fecha_inicio = moment(form.fecha_inicio)
     var fecha_fin = moment(form.fecha_fin)
     let cantidad_dias = fecha_fin.diff(fecha_inicio,'days') + 1
-    console.log(cantidad_dias)
     if(cantidad_dias <= 0){
       this.toast.mostrarNotificacion('Las fechas ingresadas no son validas',2000)
       return
@@ -47,26 +50,12 @@ export class SolicitudServicioPage implements OnInit {
       estado : 1,
       fecha_inicio: fecha_inicio.format('YYYY-MM-DD'),
       fecha_fin: moment(form.fecha_fin).format('YYYY-MM-DD'),
-      servicio: form.servicio,
+      servicio: this.servicio,
+      nombreServicio: (this.servicios.find(ser => ser.codigo === this.servicio)).descripcion,
       horas:form.horas
     }
-    console.log(this.xServicio)
-    console.log(moment(form.hora_inicio).format('HH:mm'))
-    var status = moment(form.hora_inicio).add(5, 'hours').format('HH:mm');
-    console.log(status)
+    ConfirmarSolicitudPage.xSolicitud = <any>this.xServicio
+    this.navCtrl.navigateRoot('/confirmar-solicitud')
   }
 }
 
-interface Servicio {
-  id_usuario:number,
-  id_empleado:number,
-  servicio:string,
-  cantidad_dias:number,
-  fecha_inicio:string,
-  fecha_fin:string,
-  horas:number,
-  hora_inicio:string,
-  hora_fin:string,
-  valor:number,
-  estado:number
-}
