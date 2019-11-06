@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide>
+      <ion-img src="assets/001.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/002.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/003.jpg"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid id="grid-servicios">
+    <ion-row class="fila-servicios">
+      <ion-col size="6" *ngFor="let grupo of grupos">
+        <a routerLink="/servicios-especiales/{{grupo.codigo}}" routerDirection="forward">
+          <ion-img [src]="grupo.icon"></ion-img>
+          <ion-text>{{grupo.detalle}}</ion-text>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-fab-whatsapp></app-fab-whatsapp>
+</ion-content>
+
+<app-footer></app-footer>

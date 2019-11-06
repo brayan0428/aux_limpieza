@@ -35,7 +35,7 @@ const routes: Routes = [
       "./pages/servicios-acompanamiento-adulto-mayor/servicios-acompanamiento-adulto-mayor.module#ServiciosAcompanamientoAdultoMayorPageModule"
   },
   {
-    path: "servicios-especiales",
+    path: "servicios-especiales/:id",
     loadChildren:
       "./pages/servicios-especiales/servicios-especiales.module#ServiciosEspecialesPageModule"
   },
@@ -102,6 +102,11 @@ const routes: Routes = [
     path: "solicitud-servicio/:servicio",
     loadChildren:
       "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule"
+  },
+  {
+    path: "grupos-servicios-especiales",
+    loadChildren:
+      "./pages/grupos-servicios-especiales/grupos-servicios-especiales.module#GruposServiciosEspecialesPageModule"
   }
 ];
 

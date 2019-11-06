@@ -3,99 +3,35 @@
 <ion-content>
   <app-title-page title="Servicios Especiales"></app-title-page>
   <ion-row id="row-txt-serviespeciales">
-      <ion-col></ion-col>
-      <ion-col size="10">
-          <ion-text color="dark">
-            <h5>¡Aquí están sólo los mejores!</h5>
-          </ion-text>
-      </ion-col>
-      <ion-col></ion-col>
-  </ion-row>  
+    <ion-col></ion-col>
+    <ion-col size="10">
+      <ion-text color="dark">
+        <h5>¡Aquí están sólo los mejores!</h5>
+      </ion-text>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
   <ion-row>
-      <ion-col size="1"></ion-col>
-      
-      <ion-col>
-          <ion-item routerLink="/se-plomeros" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Plomeros</ion-label>
-              <ion-badge slot="end">17</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-mecanicos" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Mecánicos</ion-label>
-              <ion-badge slot="end">19</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-electricistas" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Electricistas</ion-label>
-              <ion-badge slot="end">7</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-cerrajeros" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Cerrajeros</ion-label>
-              <ion-badge slot="end">5</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-albaniles" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Albañiles</ion-label>
-              <ion-badge slot="end">11</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-diseno-interiores" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Diseño de Interiores</ion-label>
-              <ion-badge slot="end">3</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-aires-acondicionados" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Aires Acondicionados</ion-label>
-              <ion-badge slot="end">12</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-jardineros" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Jardineros</ion-label>
-              <ion-badge slot="end">7</ion-badge>
-          </ion-item>
-          
-          <ion-item routerLink="/se-enfermeros" routerDirection="forward">
-              <ion-avatar slot="start">
-                  <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
-              </ion-avatar>
-              <ion-label>Enfermeros</ion-label>
-              <ion-badge slot="end">15</ion-badge>
-          </ion-item>
-      </ion-col>
-      
-      <ion-col size="1"></ion-col>
+    <ion-col size="1"></ion-col>
+
+    <ion-col>
+      <ion-item routerLink="/se-plomeros" routerDirection="forward" *ngFor="let especialidad of especialidades">
+        <ion-avatar slot="start">
+          <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
+        </ion-avatar>
+        <ion-label>{{especialidad.nombre}}</ion-label>
+        <ion-badge slot="end">{{especialidad.Cantidad}}</ion-badge>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="1"></ion-col>
   </ion-row>
 
   <ion-row>
-      <ion-col></ion-col>
+    <ion-col></ion-col>
   </ion-row>
   <ion-row>
-      <ion-col></ion-col>
+    <ion-col></ion-col>
   </ion-row>
   <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
