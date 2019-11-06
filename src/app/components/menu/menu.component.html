@@ -8,7 +8,7 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-menu-toggle>
+      <ion-menu-toggle *ngIf="!userLogged">
         <ion-item routerLink="/home">
           <ion-icon name="home" slot="start"></ion-icon>
           <ion-label>Home</ion-label>
@@ -32,7 +32,7 @@
           <ion-label>Lista de Precios</ion-label>
         </ion-item>
       </ion-menu-toggle>
-      <ion-menu-toggle>
+      <ion-menu-toggle *ngIf="userLogged">
         <ion-item routerLink="/mis-servicios">
           <ion-icon name="home" slot="start"></ion-icon>
           <ion-label>Mis Servicios</ion-label>

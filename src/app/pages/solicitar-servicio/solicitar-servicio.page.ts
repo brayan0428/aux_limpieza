@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { UserService } from "../../services/user.service";
 
 @Component({
-  selector: 'app-solicitar-servicio',
-  templateUrl: './solicitar-servicio.page.html',
-  styleUrls: ['./solicitar-servicio.page.scss'],
+  selector: "app-solicitar-servicio",
+  templateUrl: "./solicitar-servicio.page.html",
+  styleUrls: ["./solicitar-servicio.page.scss"]
 })
 export class SolicitarServicioPage implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    console.log(localStorage.getItem('idUser'))
+    console.log(UserService.idUser);
   }
 
-  ionViewDidEnter(){
-    
-  }
+  ionViewDidEnter() {}
 }
