@@ -1,9 +1,10 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", loadChildren: "./pages/home/home.module#HomePageModule" },
+  { path: "home", loadChildren: "./pages/home/home.module#HomePageModule" ,canActivate:[AuthGuardService]},
   { path: "login", loadChildren: "./pages/login/login.module#LoginPageModule" },
   {
     path: "registro",
@@ -101,13 +102,16 @@ const routes: Routes = [
   {
     path: "solicitud-servicio/:servicio",
     loadChildren:
-      "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule"
+      "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule",
+    canActivate:[AuthGuardService]
   },
   {
     path: "grupos-servicios-especiales",
     loadChildren:
       "./pages/grupos-servicios-especiales/grupos-servicios-especiales.module#GruposServiciosEspecialesPageModule"
-  },  { path: 'confirmar-solicitud', loadChildren: './pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule' }
+  },
+  { path: 'confirmar-solicitud', loadChildren: './pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule',
+  canActivate:[AuthGuardService] }
 
 ];
 

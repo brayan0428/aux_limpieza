@@ -1,5 +1,6 @@
 import { Component, OnInit, DoCheck, AfterContentInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: "app-menu",
@@ -8,7 +9,8 @@ import { UserService } from "../../services/user.service";
 })
 export class MenuComponent implements OnInit, DoCheck {
   userLogged;
-  constructor() {}
+  constructor(private alertController:AlertController,
+              private navCtrl:NavController) {}
 
   ngOnInit() {
     console.log("ngOnInit");
@@ -16,5 +18,27 @@ export class MenuComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     this.userLogged = UserService.loggedUser;
+  }
+
+  async CerrarSesion() {
+    const alert = await this.alertController.create({
+      header: 'Cerrar Sesión',
+      message: 'Esta seguro que desea salir?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'Si',
+          handler: () => {
+            UserService.CerrarSesion()
+            this.navCtrl.navigateRoot('/home')
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

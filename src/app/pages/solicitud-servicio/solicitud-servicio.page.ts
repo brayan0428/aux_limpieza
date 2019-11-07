@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConsultasService } from "src/app/services/consultas.service";
 import * as moment from 'moment';
 import { ToastService } from 'src/app/services/toast.service';
 import { ConfirmarSolicitudPage } from '../confirmar-solicitud/confirmar-solicitud.page';
 import { NavController } from '@ionic/angular';
 import { Servicio } from 'src/app/interfaces/interfaces';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: "app-solicitud-servicio",
@@ -16,20 +17,29 @@ import { Servicio } from 'src/app/interfaces/interfaces';
 export class SolicitudServicioPage implements OnInit {
   servicio:string;
   servicios:any[];
+  usuarios:any[];
   xServicio:Servicio;
-
+  fechaAct:string = String(new Date())
   horas = [2,3,4,6,8]
   constructor(private route:ActivatedRoute,
               private consultasService: ConsultasService,
               private toast: ToastService,
-              public navCtrl:NavController) {}
+              public navCtrl:NavController,
+              private router:Router) {}
 
   ngOnInit() {
+    console.log(this.fechaAct)
     this.consultasService.obtenerServicios().subscribe((data:any) => {
       this.servicios = data
       this.servicio = this.route.snapshot.paramMap.get('servicio')
     })
 
+    this.consultasService.obtenerUsuariosAsociados(UserService.idUser).subscribe((data:any) => {
+      this.usuarios = data
+      console.log(this.usuarios)
+    })
+
+    this.fechaAct = moment(this.fechaAct).format('YYYY-MM-DD')
   }
 
   async solicitarServicio(form) {
@@ -55,7 +65,7 @@ export class SolicitudServicioPage implements OnInit {
       horas:form.horas
     }
     ConfirmarSolicitudPage.xSolicitud = <any>this.xServicio
-    this.navCtrl.navigateRoot('/confirmar-solicitud')
+    this.router.navigate(['/confirmar-solicitud'])
   }
 }
 

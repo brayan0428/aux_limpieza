@@ -2,7 +2,8 @@
 
 <ion-content>
   <app-title-page title="Confirmar Solicitud"></app-title-page>
-  <ion-card>
+  <ion-content class="ion-padding">
+      <ion-card>
       <ion-card-header>
         <ion-card-title>Servicio {{solicitud.nombreServicio}}</ion-card-title>
       </ion-card-header>
@@ -30,6 +31,10 @@
           <hr>
         </ion-card-content>
       </ion-card>
+      <ion-button expand="full">Confirmar Solicitud</ion-button>
+      <ion-button expand="full" color="danger" [routerLink]="['/solicitar-servicio']"  >Cancelar</ion-button>
+  </ion-content>
+
   <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 

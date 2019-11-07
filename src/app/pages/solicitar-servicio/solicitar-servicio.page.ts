@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
+import { ConsultasService } from 'src/app/services/consultas.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: "app-solicitar-servicio",
@@ -7,11 +9,19 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["./solicitar-servicio.page.scss"]
 })
 export class SolicitarServicioPage implements OnInit {
-  constructor() {}
+  servicios:any[];
+  constructor(private consultasService: ConsultasService,
+              private loading:LoadingService) {}
 
-  ngOnInit() {
-    console.log(UserService.idUser);
+  async ngOnInit() {
+    await this.loading.showCargando('Cargando...')
+    this.consultasService.obtenerServicios().subscribe((data:any) => {
+      this.servicios = data
+      this.loading.stopCargando()
+    })
   }
 
-  ionViewDidEnter() {}
+  ionViewDidEnter() {
+    
+  }
 }

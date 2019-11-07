@@ -11,4 +11,12 @@ export class UserService {
   public static correoUser:string;
   
   constructor() {}
+
+  public static CerrarSesion(){
+    this.loggedUser = false
+    this.idUser = ''
+    this.nombresUser = ''
+    this.apellidosUser = ''
+    this.correoUser = ''
+  }
 }

@@ -16,15 +16,15 @@
         </ion-label>
         <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="usuario" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option value="2">Brayan Llanos</ion-select-option>
+          <ion-select-option *ngFor="let user of usuarios" [value]="user.id">{{user.nombres}} {{user.apellidos}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label>Tiempo de Servicio<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-datetime display-format="DD/MM/YYYY" placeholder="Inicio" cancelText="Cancelar" ngModel
+        <ion-datetime display-format="DD/MM/YYYY" [min]="fechaAct" placeholder="Inicio" cancelText="Cancelar" ngModel
           name="fecha_inicio"></ion-datetime>
-        <ion-datetime display-format="DD/MM/YYYY" placeholder="Fin" cancelText="Cancelar" ngModel name="fecha_fin">
+        <ion-datetime display-format="DD/MM/YYYY" [min]="fechaAct" placeholder="Fin" cancelText="Cancelar" ngModel name="fecha_fin">
         </ion-datetime>
       </ion-item>
       <ion-item>
@@ -38,7 +38,7 @@
       <ion-item>
         <ion-label>Hora de Inicio<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-datetime display-format="HH:mm" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
+        <ion-datetime display-format="HH:mm" minute-values="0,30" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
         </ion-datetime>
       </ion-item>
       <br>

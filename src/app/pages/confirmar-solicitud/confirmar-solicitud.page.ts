@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Servicio } from 'src/app/interfaces/interfaces';
 import { NavController } from '@ionic/angular';
 import { ConsultasService } from 'src/app/services/consultas.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-confirmar-solicitud',
@@ -20,7 +21,8 @@ export class ConfirmarSolicitudPage implements OnInit {
   total:number = 0;
 
   constructor(private navCtrl:NavController,
-              private consultasService:ConsultasService) { 
+              private consultasService:ConsultasService,
+              private loading:LoadingService) { 
     this.solicitud = ConfirmarSolicitudPage.xSolicitud;
     if (this.solicitud == undefined){
       this.navCtrl.navigateRoot('/solicitar-servicio')
@@ -28,6 +30,14 @@ export class ConfirmarSolicitudPage implements OnInit {
   }
 
   async ngOnInit() {
+    
+  }
+
+  async ionViewWillEnter(){
+    this.solicitud = ConfirmarSolicitudPage.xSolicitud;
+    if (this.solicitud == undefined){
+      this.navCtrl.navigateRoot('/solicitar-servicio')
+    }
     console.log(ConfirmarSolicitudPage.xSolicitud)
     let data = {
       "servicio" : this.solicitud.servicio,
@@ -36,7 +46,7 @@ export class ConfirmarSolicitudPage implements OnInit {
       "horas":this.solicitud.horas,
       "especial":0
     }
-
+    await this.loading.showCargando('Cargando...')
     this.consultasService.obtenerValorServicio(data).subscribe(data => {
       this.valores = data[0]
       this.valorxDia = this.valores[0].Valor
@@ -44,7 +54,7 @@ export class ConfirmarSolicitudPage implements OnInit {
       this.subtotal = this.solicitud.cantidad_dias * this.valorxDia
       this.descuento =this.subtotal * this.valores[0].Descuento
       this.total = this.valores[0].Total
+      this.loading.stopCargando()
     })
   }
-
 }

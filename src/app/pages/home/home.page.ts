@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController } from "@ionic/angular";
+import { NavController, MenuController } from "@ionic/angular";
 import { UserService } from "../../services/user.service";
 
 @Component({
@@ -8,11 +8,10 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["home.page.scss"]
 })
 export class HomePage {
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController,
+              private menu:MenuController) {}
 
   ionViewWillEnter() {
-    if (UserService.idUser) {
-      this.navCtrl.navigateRoot("/solicitar-servicio");
-    }
+    
   }
 }

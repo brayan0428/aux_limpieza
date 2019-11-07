@@ -35,4 +35,8 @@ export class ConsultasService {
   obtenerValorServicio(data){
     return this.http.post(`${this.url}/valorservicio`,data);
   }
+
+  obtenerUsuariosAsociados(id){
+    return this.http.get(`${this.url}/usuarios-asociados/${id}`);
+  }
 }

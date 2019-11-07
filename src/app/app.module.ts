@@ -15,6 +15,7 @@ import { File } from "@ionic-native/File/ngx";
 import { FileOpener } from "@ionic-native/file-opener/ngx";
 import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 import { UserService } from "./services/user.service";
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,8 @@ import { UserService } from "./services/user.service";
     File,
     FileOpener,
     FileTransfer,
-    UserService
+    UserService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
