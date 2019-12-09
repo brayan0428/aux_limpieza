@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {URL_API} from '../../environments/environment'
+import { URL_API } from "../../environments/environment";
 @Injectable({
   providedIn: "root"
 })
@@ -32,11 +32,11 @@ export class ConsultasService {
     return this.http.get(`${this.url}/especialidadesxgrupo/${id}`);
   }
 
-  obtenerValorServicio(data){
-    return this.http.post(`${this.url}/valorservicio`,data);
+  obtenerValorServicio(data) {
+    return this.http.post(`${this.url}/valorservicio`, data);
   }
 
-  obtenerUsuariosAsociados(id){
+  obtenerUsuariosAsociados(id) {
     return this.http.get(`${this.url}/usuarios-asociados/${id}`);
   }
 }

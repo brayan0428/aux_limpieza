@@ -56,8 +56,8 @@ export class RegistroPage implements OnInit {
     console.log(form);
     await this.loading.showCargando("Espere...");
     this.procesosService.guardarUsuario(form).subscribe(data => {
-      if (data["error"] != "") {
-        this.toast.mostrarNotificacion(data["error"], 2000);
+      if (data["error"]) {
+        this.toast.mostrarNotificacion(data["message"], 2000);
       } else {
         this.toast.mostrarNotificacion("Usuario creado exitosamente", 2000);
         this.navCtrl.navigateRoot("/home");
