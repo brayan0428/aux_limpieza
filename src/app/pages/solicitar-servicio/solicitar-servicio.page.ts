@@ -18,7 +18,7 @@ export class SolicitarServicioPage implements OnInit {
   async ngOnInit() {
     await this.loading.showCargando("Cargando...");
     this.consultasService.obtenerServicios().subscribe((data: any) => {
-      this.servicios = data;
+      this.servicios = JSON.parse(data);
       this.loading.stopCargando();
     });
   }

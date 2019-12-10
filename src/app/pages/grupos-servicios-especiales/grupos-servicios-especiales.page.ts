@@ -12,8 +12,8 @@ export class GruposServiciosEspecialesPage implements OnInit {
   constructor(private consultasService: ConsultasService) {}
 
   ngOnInit() {
-    this.consultasService.obtenerGruposEspecialidades().subscribe(data => {
-      this.grupos = <any>data;
+    this.consultasService.obtenerGruposEspecialidades().subscribe((data:any) => {
+      this.grupos = JSON.parse(data);
     });
   }
 }

@@ -47,13 +47,15 @@ export class ConfirmarSolicitudPage implements OnInit {
       "especial":0
     }
     await this.loading.showCargando('Cargando...')
-    this.consultasService.obtenerValorServicio(data).subscribe(data => {
+    this.consultasService.obtenerValorServicio(data).subscribe((data:any) => {
+      data = JSON.parse(data)
       this.valores = data[0]
-      this.valorxDia = this.valores[0].Valor
-      this.porcentajeDescuento = this.valores[0].Descuento * 100
+      console.log(this.valores)
+      this.valorxDia = this.valores["Valor"]
+      this.porcentajeDescuento = this.valores["Descuento"] * 100
       this.subtotal = this.solicitud.cantidad_dias * this.valorxDia
-      this.descuento =this.subtotal * this.valores[0].Descuento
-      this.total = this.valores[0].Total
+      this.descuento =this.subtotal * this.valores["Descuento"]
+      this.total = this.valores["Total"]
       this.loading.stopCargando()
     })
   }

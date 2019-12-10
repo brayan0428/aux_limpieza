@@ -19,8 +19,8 @@ export class ServiciosEspecialesPage implements OnInit {
   async ngOnInit() {
     await this.loading.showCargando("Consultando...");
     let id = this.router.snapshot.paramMap.get("id");
-    this.consultasService.obtenerEspecialidadesxGrupo(id).subscribe(data => {
-      this.especialidades = <any>data;
+    this.consultasService.obtenerEspecialidadesxGrupo(id).subscribe((data:any) => {
+      this.especialidades = JSON.parse(data);
       this.loading.stopCargando();
     });
   }

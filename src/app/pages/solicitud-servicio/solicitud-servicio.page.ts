@@ -30,13 +30,12 @@ export class SolicitudServicioPage implements OnInit {
   ngOnInit() {
     console.log(this.fechaAct)
     this.consultasService.obtenerServicios().subscribe((data:any) => {
-      this.servicios = data
+      this.servicios = JSON.parse(data)
       this.servicio = this.route.snapshot.paramMap.get('servicio')
     })
 
     this.consultasService.obtenerUsuariosAsociados(UserService.idUser).subscribe((data:any) => {
-      this.usuarios = data
-      console.log(this.usuarios)
+      this.usuarios = JSON.parse(data)
     })
 
     this.fechaAct = moment(this.fechaAct).format('YYYY-MM-DD')

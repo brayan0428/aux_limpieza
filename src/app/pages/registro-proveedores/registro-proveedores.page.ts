@@ -17,7 +17,10 @@ import {FileTransfer} from '@ionic-native/file-transfer/ngx';
 
 export class RegistroProveedoresPage implements OnInit {
   ciudades:[];
+  tipodoc:[];
   especialidades:[];
+  grupos:[];
+
   constructor(private consultasService:ConsultasService,
               private procesosService:ProcesosService,
               private toast:ToastService,
@@ -31,25 +34,25 @@ export class RegistroProveedoresPage implements OnInit {
 
   ngOnInit() {
     this.consultasService.obtenerCiudades().subscribe((data: any) => {
-      this.ciudades = data
+      this.ciudades = JSON.parse(data)
     })
 
-    this.consultasService.obtenerEspecialidades().subscribe((data:any) => {
-      this.especialidades = data
+    this.consultasService.obtenerTiposDocumentos().subscribe((data:any) => {
+      this.tipodoc = JSON.parse(data)
     })
+
+    this.consultasService.obtenerGruposEspecialidades().subscribe((data:any) => {
+      this.grupos = JSON.parse(data);
+    });
   }
 
   async guardarProveedor(form){
-    if(form.clave != form.confirmarClave){
-      this.toast.mostrarNotificacion('Las claves no coinciden',2000)
-      return
-    }
     form.perfil = 2
     console.log(form)
     await this.loading.showCargando('Espere...')
     this.procesosService.guardarProveedor(form).subscribe((data) => {
-      if(data["error"] != ""){
-        this.toast.mostrarNotificacion(data["error"],2000)
+      if(data["error"]){
+        this.toast.mostrarNotificacion(data["message"],2000)
       }else{
         this.toast.mostrarNotificacion('Proveedor creado exitosamente',2000)
         this.navCtrl.navigateRoot('/home')
@@ -72,6 +75,15 @@ export class RegistroProveedoresPage implements OnInit {
       }
     }).catch(err => {
       console.log(err.message)
+    })
+  }
+
+  async consultarEspecialidades(e){
+    console.log(e.target.value)
+    await this.loading.showCargando('Espere...')
+    this.consultasService.obtenerEspecialidadesxGrupo(e.target.value).subscribe((data:any) => {
+      this.especialidades = JSON.parse(data)
+      this.loading.stopCargando()
     })
   }
 }

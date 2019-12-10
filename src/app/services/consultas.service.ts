@@ -11,11 +11,7 @@ export class ConsultasService {
   obtenerCiudades() {
     return this.http.get(`${this.url}/ciudades`);
   }
-
-  obtenerEspecialidades() {
-    return this.http.get(`${this.url}/especialidades`);
-  }
-
+  
   validarLogin(user) {
     return this.http.post(`${this.url}/usuario`, user);
   }
@@ -25,11 +21,11 @@ export class ConsultasService {
   }
 
   obtenerGruposEspecialidades() {
-    return this.http.get(`${this.url}/grupos-especialidades`);
+    return this.http.get(`${this.url}/grupos`);
   }
 
   obtenerEspecialidadesxGrupo(id: string) {
-    return this.http.get(`${this.url}/especialidadesxgrupo/${id}`);
+    return this.http.get(`${this.url}/servicios-especiales/${id}`);
   }
 
   obtenerValorServicio(data) {
@@ -38,5 +34,9 @@ export class ConsultasService {
 
   obtenerUsuariosAsociados(id) {
     return this.http.get(`${this.url}/usuarios-asociados/${id}`);
+  }
+
+  obtenerTiposDocumentos() {
+    return this.http.get(`${this.url}/tipodoc`);
   }
 }
