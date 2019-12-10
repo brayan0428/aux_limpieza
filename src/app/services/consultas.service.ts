@@ -39,4 +39,8 @@ export class ConsultasService {
   obtenerTiposDocumentos() {
     return this.http.get(`${this.url}/tipodoc`);
   }
+
+  obtenerProveedores(id) {
+    return this.http.get(`${this.url}/proveedores/${id}`);
+  }
 }

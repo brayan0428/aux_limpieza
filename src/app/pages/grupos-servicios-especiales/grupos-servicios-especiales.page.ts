@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ConsultasService } from "../../services/consultas.service";
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: "app-grupos-servicios-especiales",
@@ -9,11 +10,14 @@ import { ConsultasService } from "../../services/consultas.service";
 export class GruposServiciosEspecialesPage implements OnInit {
   grupos: any[] = [];
 
-  constructor(private consultasService: ConsultasService) {}
+  constructor(private consultasService: ConsultasService,
+              private loading:LoadingService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.loading.showCargando('Cargando...')
     this.consultasService.obtenerGruposEspecialidades().subscribe((data:any) => {
       this.grupos = JSON.parse(data);
+      this.loading.stopCargando()
     });
   }
 }

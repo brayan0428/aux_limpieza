@@ -47,7 +47,8 @@ const routes: Routes = [
       "./pages/grupos-servicios-especiales/grupos-servicios-especiales.module#GruposServiciosEspecialesPageModule"
   },
   { path: 'confirmar-solicitud', loadChildren: './pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule',
-  canActivate:[AuthGuardService] },  { path: 'proveedores', loadChildren: './pages/proveedores/proveedores.module#ProveedoresPageModule' }
+  canActivate:[AuthGuardService] },
+  { path: 'proveedores/:especialidad', loadChildren: './pages/proveedores/proveedores.module#ProveedoresPageModule' }
 
 
 ];
