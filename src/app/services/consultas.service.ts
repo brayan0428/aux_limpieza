@@ -28,6 +28,10 @@ export class ConsultasService {
     return this.http.get(`${this.url}/servicios-especiales/${id}`);
   }
 
+  obtenerEspecialidadesxGrupoTodos(id: string) {
+    return this.http.get(`${this.url}/servicios-especiales-todos/${id}`);
+  }
+
   obtenerValorServicio(data) {
     return this.http.post(`${this.url}/valorservicio`, data);
   }

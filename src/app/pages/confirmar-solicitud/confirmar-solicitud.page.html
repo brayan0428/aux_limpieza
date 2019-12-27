@@ -31,6 +31,21 @@
           <hr>
         </ion-card-content>
       </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Pago</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Forma de Pago<ion-text color="danger">*</ion-text></ion-label>
+            <ion-select value="" okText="Ok" cancelText="Cancelar" name="forma_pago" required>
+                <ion-select-option value="">Elegir</ion-select-option>
+                <ion-select-option value="cre">Tarjeta Crédito</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
       <ion-button expand="full">Confirmar Solicitud</ion-button>
       <ion-button expand="full" color="danger" [routerLink]="['/solicitar-servicio']"  >Cancelar</ion-button>
   </ion-content>

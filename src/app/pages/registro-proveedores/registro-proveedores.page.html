@@ -35,7 +35,6 @@
                     name="apellidos"
                     ngModel
                     required
-                    class="ion-text-uppercase"
                     >
         </ion-input>
       </ion-item>
@@ -45,7 +44,6 @@
                       name="direccion"
                       ngModel
                       required
-                      class="ion-text-uppercase"
                       >
           </ion-input>
         </ion-item>
@@ -53,7 +51,7 @@
           <ion-label>Ciudad<ion-text color="danger">*</ion-text></ion-label>
           <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
               <ion-select-option value="">Seleccione</ion-select-option>
-              <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.nombre}}</ion-select-option>
+              <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.codigo">{{ciudad.nombre}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
@@ -93,8 +91,7 @@
         </ion-item>
         <ion-item>
           <ion-label>Especialidad<ion-text color="danger">*</ion-text></ion-label>
-          <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="especialidad" required>
-              <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" multiple="true" ngModel name="especialidades" required>
               <ion-select-option *ngFor="let especialidad of especialidades" [value]="especialidad.codigo">{{especialidad.nombre}}</ion-select-option>
           </ion-select>
         </ion-item>
@@ -113,7 +110,6 @@
                       name="nombre_referencia_personal"
                       ngModel
                       required
-                      class="ion-text-uppercase"
                       >
           </ion-input>
         </ion-item>
@@ -135,7 +131,6 @@
                       name="nombre_referencia_familiar"
                       ngModel
                       required
-                      class="ion-text-uppercase"
                       >
           </ion-input>
         </ion-item>

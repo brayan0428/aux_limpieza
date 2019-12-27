@@ -81,7 +81,7 @@ export class RegistroProveedoresPage implements OnInit {
   async consultarEspecialidades(e){
     console.log(e.target.value)
     await this.loading.showCargando('Espere...')
-    this.consultasService.obtenerEspecialidadesxGrupo(e.target.value).subscribe((data:any) => {
+    this.consultasService.obtenerEspecialidadesxGrupoTodos(e.target.value).subscribe((data:any) => {
       this.especialidades = JSON.parse(data)
       this.loading.stopCargando()
     })

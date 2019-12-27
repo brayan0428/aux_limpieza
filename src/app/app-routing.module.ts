@@ -48,7 +48,8 @@ const routes: Routes = [
   },
   { path: 'confirmar-solicitud', loadChildren: './pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule',
   canActivate:[AuthGuardService] },
-  { path: 'proveedores/:especialidad', loadChildren: './pages/proveedores/proveedores.module#ProveedoresPageModule' }
+  { path: 'proveedores/:especialidad', loadChildren: './pages/proveedores/proveedores.module#ProveedoresPageModule' },  { path: 'fp-tarjetacredito', loadChildren: './pages/fp-tarjetacredito/fp-tarjetacredito.module#FpTarjetacreditoPageModule' }
+
 
 
 ];
