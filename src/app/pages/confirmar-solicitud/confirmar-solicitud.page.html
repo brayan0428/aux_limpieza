@@ -3,11 +3,11 @@
 <ion-content>
   <app-title-page title="Confirmar Solicitud"></app-title-page>
   <ion-content class="ion-padding">
-      <ion-card>
+    <ion-card>
       <ion-card-header>
         <ion-card-title>Servicio {{solicitud.nombreServicio}}</ion-card-title>
       </ion-card-header>
-    
+
       <ion-card-content>
         <b>Fecha Inicio: </b> {{solicitud.fecha_inicio}} <br>
         <b>Fecha Fin: </b> {{solicitud.fecha_fin}} <br>
@@ -19,35 +19,36 @@
       </ion-card-content>
     </ion-card>
     <ion-card>
-        <ion-card-header>
-          <ion-card-title>Valor Servicio</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          <b>Valor Dia: </b> {{valorxDia}} <br>
-          <b>Subtotal: </b> {{subtotal}} <br>
-          <b>Descuento {{porcentajeDescuento}}%: </b> {{descuento}} <br>
-          <b>Total: </b> {{total}} <br>
-          <hr>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Pago</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          <ion-item>
-            <ion-label>Forma de Pago<ion-text color="danger">*</ion-text></ion-label>
-            <ion-select value="" okText="Ok" cancelText="Cancelar" name="forma_pago" required>
-                <ion-select-option value="">Elegir</ion-select-option>
-                <ion-select-option value="cre">Tarjeta Crédito</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-button expand="full">Confirmar Solicitud</ion-button>
-      <ion-button expand="full" color="danger" [routerLink]="['/solicitar-servicio']"  >Cancelar</ion-button>
+      <ion-card-header>
+        <ion-card-title>Valor Servicio</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <b>Valor Dia: </b> {{valorxDia}} <br>
+        <b>Subtotal: </b> {{subtotal}} <br>
+        <b>Descuento {{porcentajeDescuento}}%: </b> {{descuento}} <br>
+        <b>Total: </b> {{total}} <br>
+        <hr>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pago</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Forma de Pago<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" name="forma_pago" [(ngModel)]="formaPago" required>
+            <ion-select-option value="">Elegir</ion-select-option>
+            <ion-select-option value="TC">Tarjeta Crédito</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="full" (click)="RealizarPago()">Confirmar Solicitud</ion-button>
+    <ion-button expand="full" color="danger" [routerLink]="['/solicitar-servicio']">Cancelar</ion-button>
   </ion-content>
 
   <app-fab-whatsapp></app-fab-whatsapp>
