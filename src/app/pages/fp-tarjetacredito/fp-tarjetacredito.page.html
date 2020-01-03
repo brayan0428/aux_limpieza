@@ -3,7 +3,7 @@
 <ion-content>
   <app-title-page title="Realizar Pago"></app-title-page>
   <ion-content padding>
-    <form #formTarjetaCredito="ngForm">
+    <form #formTarjetaCredito="ngForm" (ngSubmit)="procesarPago(formTarjetaCredito.value)">
       <ion-item>
         <ion-label position="floating">Número de tarjeta</ion-label>
         <ion-input type="number" name="numero_tarjeta" minlength="16" maxlength="16" required ngModel
@@ -12,7 +12,8 @@
       <ion-row align-items-end>
         <ion-item>
           <ion-label position="floating">Expiración</ion-label>
-          <ion-input type="number" name="expiracion"></ion-input>
+          <ion-datetime display-format="YYYY/MM"  cancelText="Cancelar" max="2030-12-31" ngModel
+          name="expiracion"></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label position="floating">CVV</ion-label>
@@ -21,9 +22,9 @@
       </ion-row>
       <ion-item>
         <ion-label position="floating">Nombre del titular</ion-label>
-        <ion-input type="texto" name="nombre_titular"></ion-input>
+        <ion-input type="texto" name="nombre_titular" required ngModel></ion-input>
       </ion-item>
-      <ion-button expand="full" [disabled]="formTarjetaCredito.invalid">Procesar Pago</ion-button>
+      <ion-button expand="full" [disabled]="formTarjetaCredito.invalid" type="submit">Procesar Pago</ion-button>
     </form>
 
   </ion-content>

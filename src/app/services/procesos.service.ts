@@ -22,4 +22,8 @@ export class ProcesosService {
   guardarServicio(servicio){
     return this.http.post(`${this.url}/servicio`, servicio)
   }
+
+  pagoTarjetaCredito(servicio){
+    return this.http.post(`${this.url}/credit-card`, servicio)
+  }
 }

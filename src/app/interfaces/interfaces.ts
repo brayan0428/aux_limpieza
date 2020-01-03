@@ -10,5 +10,13 @@ export interface Servicio {
     hora_inicio:string,
     hora_fin:string,
     valor:number,
-    estado:number
+    estado:number,
+    direccion:string,
+    ciudad:string,
+    numero_tarjeta?:string,
+    nombre_titular?:string,
+    cvv?:number,
+    expiracion?:string,
+    tipo_tarjeta?:string,
+    formapago?:string
   }

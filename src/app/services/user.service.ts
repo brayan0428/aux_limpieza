@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Servicio } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +10,8 @@ export class UserService {
   public static nombresUser:string;
   public static apellidosUser:string;
   public static correoUser:string;
+  
+  public static xServicio:Servicio
   
   constructor() {}
 

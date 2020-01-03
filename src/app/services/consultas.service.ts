@@ -47,4 +47,8 @@ export class ConsultasService {
   obtenerProveedores(id) {
     return this.http.get(`${this.url}/proveedores/${id}`);
   }
+
+  obtenerFestivos() {
+    return this.http.get(`${this.url}/festivos`);
+  }
 }

@@ -18,6 +18,7 @@ export class SolicitudServicioPage implements OnInit {
   servicio:string;
   servicios:any[];
   usuarios:any[];
+  festivos:any[];
   xServicio:Servicio;
   fechaAct:string = String(new Date())
   horas = [2,3,4,6,8]
@@ -38,6 +39,11 @@ export class SolicitudServicioPage implements OnInit {
       this.usuarios = JSON.parse(data)
     })
 
+    this.consultasService.obtenerFestivos().subscribe((data:any) => {
+      this.festivos = JSON.parse(data)
+      console.log(this.festivos)
+    })
+
     this.fechaAct = moment(this.fechaAct).format('YYYY-MM-DD')
   }
 
@@ -49,6 +55,19 @@ export class SolicitudServicioPage implements OnInit {
       this.toast.mostrarNotificacion('Las fechas ingresadas no son validas',2000)
       return
     }
+    // Valido si hay alguna fecha que sea domingo o festivo
+    let numDias = 1
+    let fecha = fecha_inicio
+    while (numDias <= cantidad_dias) {
+      if((fecha.isoWeekday() == 7 || this.festivos.find(fes => fes.fecha === fecha.format('YYYY-MM-DD'))) && form.horas < 4){
+        console.log("Error")
+        return
+      }
+      console.log(fecha.format('YYYY-MM-DD'))
+      fecha = fecha.add(1,"day")
+      numDias += 1
+    }
+    let user = this.usuarios.find(user => user.id == form.usuario)
     this.xServicio = {
       id_empleado : 1,
       id_usuario : form.usuario,
@@ -61,7 +80,9 @@ export class SolicitudServicioPage implements OnInit {
       fecha_fin: moment(form.fecha_fin).format('YYYY-MM-DD'),
       servicio: this.servicio,
       nombreServicio: (this.servicios.find(ser => ser.codigo === this.servicio)).descripcion,
-      horas:form.horas
+      horas:form.horas,
+      direccion:user.direccion,
+      ciudad:user.ciudad
     }
     ConfirmarSolicitudPage.xSolicitud = <any>this.xServicio
     this.router.navigate(['/confirmar-solicitud'])
