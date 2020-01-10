@@ -43,7 +43,6 @@ export class ConfirmarSolicitudPage implements OnInit {
     if (this.solicitud == undefined) {
       this.navCtrl.navigateRoot("/solicitar-servicio");
     }
-    console.log(ConfirmarSolicitudPage.xSolicitud);
     let data = {
       servicio: this.solicitud.servicio,
       ciudad: this.solicitud.ciudad,
@@ -62,6 +61,9 @@ export class ConfirmarSolicitudPage implements OnInit {
       this.descuento = this.subtotal * this.valores["Descuento"];
       this.total = this.valores["Total"];
       this.loading.stopCargando();
+      UserService.xServicio.valor_normal = this.valores["ValorOrdinario"]
+      UserService.xServicio.valor_especial = this.valores["ValorEspecial"]
+      UserService.xServicio.valor = this.valores["Total"]
     });
   }
 

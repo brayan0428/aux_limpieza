@@ -18,5 +18,7 @@ export interface Servicio {
     cvv?:number,
     expiracion?:string,
     tipo_tarjeta?:string,
-    formapago?:string
+    formapago?:string,
+    valor_normal?:number,
+    valor_especial?:number
   }

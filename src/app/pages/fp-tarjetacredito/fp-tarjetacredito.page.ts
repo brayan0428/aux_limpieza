@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { ProcesosService } from 'src/app/services/procesos.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { NavController } from '@ionic/angular';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-fp-tarjetacredito',
@@ -8,13 +11,15 @@ import { ProcesosService } from 'src/app/services/procesos.service';
   styleUrls: ['./fp-tarjetacredito.page.scss'],
 })
 export class FpTarjetacreditoPage implements OnInit {
-  constructor(private procesosService:ProcesosService) { }
+  constructor(private procesosService:ProcesosService,
+              private toast:ToastService,
+              private navCtrl: NavController,
+              private loading:LoadingService) { }
 
   ngOnInit() {
   }
 
-  procesarPago(form){
-    console.log(String(form.expiracion).substr(0,7).replace("-","/"))
+  async procesarPago(form){
     UserService.xServicio.numero_tarjeta = form.numero_tarjeta
     UserService.xServicio.expiracion = String(form.expiracion).substr(0,7).replace("-","/")
     UserService.xServicio.cvv = form.cvv
@@ -30,8 +35,16 @@ export class FpTarjetacreditoPage implements OnInit {
     }
     UserService.xServicio.tipo_tarjeta = tipo_tarjeta
     console.log(UserService.xServicio)
-    this.procesosService.pagoTarjetaCredito(UserService.xServicio).subscribe(data => {
-      console.log(data)
+    await this.loading.showCargando("Espere...");
+    this.procesosService.pagoTarjetaCredito(UserService.xServicio).subscribe((data:any) => {
+      this.loading.stopCargando();
+      if (data["error"]) {
+        this.toast.mostrarNotificacion(data["error"], 2000);
+        return;
+      }else{
+        this.toast.mostrarNotificacion("Servicio ingresado exitosamente", 2000);
+        this.navCtrl.navigateRoot("/mis-servicios");
+      }
     })
   }
 }

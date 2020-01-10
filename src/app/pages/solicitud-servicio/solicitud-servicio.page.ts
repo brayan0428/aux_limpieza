@@ -57,7 +57,8 @@ export class SolicitudServicioPage implements OnInit {
     }
     // Valido si hay alguna fecha que sea domingo o festivo
     let numDias = 1
-    let fecha = fecha_inicio
+    let fecha = fecha_inicio,
+        fechaini = fecha_inicio
     while (numDias <= cantidad_dias) {
       if((fecha.isoWeekday() == 7 || this.festivos.find(fes => fes.fecha === fecha.format('YYYY-MM-DD'))) && form.horas < 4){
         console.log("Error")
@@ -67,6 +68,7 @@ export class SolicitudServicioPage implements OnInit {
       fecha = fecha.add(1,"day")
       numDias += 1
     }
+    console.log(fechaini.format('YYYY-MM-DD'))
     let user = this.usuarios.find(user => user.id == form.usuario)
     this.xServicio = {
       id_empleado : 1,
@@ -76,7 +78,7 @@ export class SolicitudServicioPage implements OnInit {
       hora_inicio : moment(form.hora_inicio).format('HH:mm'),
       valor : 0,
       estado : 1,
-      fecha_inicio: fecha_inicio.format('YYYY-MM-DD'),
+      fecha_inicio: fecha_inicio.add(cantidad_dias * -1, "day").format('YYYY-MM-DD'),
       fecha_fin: moment(form.fecha_fin).format('YYYY-MM-DD'),
       servicio: this.servicio,
       nombreServicio: (this.servicios.find(ser => ser.codigo === this.servicio)).descripcion,
