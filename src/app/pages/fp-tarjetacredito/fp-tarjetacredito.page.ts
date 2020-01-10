@@ -39,7 +39,7 @@ export class FpTarjetacreditoPage implements OnInit {
     this.procesosService.pagoTarjetaCredito(UserService.xServicio).subscribe((data:any) => {
       this.loading.stopCargando();
       if (data["error"]) {
-        this.toast.mostrarNotificacion(data["error"], 2000);
+        this.toast.mostrarNotificacion(data["message"], 2000);
         return;
       }else{
         this.toast.mostrarNotificacion("Servicio ingresado exitosamente", 2000);
