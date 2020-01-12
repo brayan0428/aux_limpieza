@@ -1,0 +1,36 @@
+<app-back-button></app-back-button>
+<ion-content>
+  <app-title-page title="Agregar Usuario Asociado"></app-title-page>
+  <ion-content padding>
+    <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario.value)">
+      <ion-item>
+        <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" name="nombre" ngModel required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Celular <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="number" minlength="10" maxlength="10" name="telefono" ngModel required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Dirección <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" name="direccion" ngModel required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ciudad<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
+          <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.codigo">{{ciudad.nombre}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Guardar</ion-button>
+    </form>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-title-page title="Usuarios Asociados"></app-title-page>
+  <ion-content padding>
+    <ion-card *ngFor="let user of usuarios">
+      <ion-card-content>
+        <h3>{{user.nombre}}</h3>
+        <p>{{user.telefono}}</p>
+        <p>{{user.direccion}} - {{user.nombreCiudad}}</p>
+      </ion-card-content>
+    </ion-card>
+    <br />
+    <ion-button expand="full" (click)="mostrarModal()">
+      Nuevo Usuario Asociado
+    </ion-button>
+  </ion-content>
+</ion-content>
+<app-footer></app-footer>

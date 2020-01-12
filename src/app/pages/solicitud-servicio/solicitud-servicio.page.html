@@ -16,7 +16,7 @@
         </ion-label>
         <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="usuario" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option *ngFor="let user of usuarios" [value]="user.id">{{user.nombres}} {{user.apellidos}}</ion-select-option>
+          <ion-select-option *ngFor="let user of usuarios" [value]="user.id">{{user.nombre}}</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>

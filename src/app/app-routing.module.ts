@@ -65,6 +65,18 @@ const routes: Routes = [
     loadChildren:
       "./pages/fp-tarjetacredito/fp-tarjetacredito.module#FpTarjetacreditoPageModule",
     canActivate: [AuthGuardService]
+  },
+  {
+    path: "usuarios-asociados",
+    loadChildren:
+      "./pages/usuarios-asociados/usuarios-asociados.module#UsuariosAsociadosPageModule",
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: "agregar-usuario-asociado",
+    loadChildren:
+      "./pages/agregar-usuario-asociado/agregar-usuario-asociado.module#AgregarUsuarioAsociadoPageModule",
+    canActivate: [AuthGuardService]
   }
 ];
 
