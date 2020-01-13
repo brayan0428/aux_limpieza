@@ -6,8 +6,8 @@ export const environment = {
   production: false
 };
 
-//export const URL_API = 'https://api-auxlimpieza.herokuapp.com'
-export const URL_API = 'http://localhost/api-aux-limpieza/api'
+export const URL_API = 'http://api.auxlimpieza.com/api'
+//export const URL_API = 'http://localhost/api-aux-limpieza/api'
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

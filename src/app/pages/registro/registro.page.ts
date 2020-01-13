@@ -20,6 +20,8 @@ import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 })
 export class RegistroPage implements OnInit {
   ciudades: [];
+  acepta_terminos:boolean = false;
+  
   constructor(
     private consultasService: ConsultasService,
     private procesosService: ProcesosService,

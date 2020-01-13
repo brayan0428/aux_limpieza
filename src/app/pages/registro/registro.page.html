@@ -89,7 +89,7 @@
           </ion-item>
           <ion-item>
             <ion-label>Acepto</ion-label>
-            <ion-checkbox required name="acepta_terminos" ngModel></ion-checkbox>
+            <ion-checkbox required name="acepta_terminos" [(ngModel)]="acepta_terminos"></ion-checkbox>
           </ion-item>
         <ion-button type="submit" [disabled]="formulario.invalid" expand="full">Enviar</ion-button>
     </form>
