@@ -14,10 +14,12 @@
 
 /* Futura LT Light */
 @font-face {
-    font-family: 'futuraltlight';
-    src: local('Futura LT Light'), local('Futura-LT-Light'), local('Futura'), url('assets/Futura/FuturaLT-Light.ttf') format('ttf');
-    font-weight: light;
-    font-style: normal;
+  font-family: 'FuturaLT Light';
+  src: url('assets/Futura/FuturaLT-Light.ttf');
+  src: url('assets/Futura/FuturaLT-Light.ttf');
+}
+* {
+  font-family: 'FuturaLT Light';
 }
 
 
@@ -26,17 +28,11 @@ ion-header { background: #001d7e; }
 ion-header img { display: block; margin: 0 auto; float: none; }
 ion-header ion-title#logo-interno { float: right; padding: 10px 7px; }
 
-
-
-ion-content { display: block; background: url(assets/bg1.png) no-repeat top center; background-size: cover; padding: 0 0 55px 0; }
-
-
+ion-content { display: block; background: url(assets/bg1.png) no-repeat top center; background-size: cover; padding: 0 0 55px 0; position: relative; overflow: hidden; }
 
 ion-footer { background: #fff; }
 ion-footer ion-title a { width: 250px; height: 36px; display: block; margin: 0 auto; float: none; }
 ion-footer ion-title a img { margin: 10px auto; float: none; width: 217px; height: auto; display: block; }
-
-
 
 .sc-ion-card-md-h { margin-top: 5px; margin-bottom: 5px; }
 .sc-ion-card-md-s img { display: block; width: 50%; }
@@ -45,14 +41,14 @@ ion-footer ion-title a img { margin: 10px auto; float: none; width: 217px; heigh
 ion-footer ion-title.title-ios { -webkit-padding-start: 10px; padding-inline-start: 10px; -webkit-padding-end: 10px; padding-inline-end: 10px; }
 
 ion-avatar { border-radius: 0 !important; }
-ion-avatar img { border-radius: 0 !important; }
+ion-avatar img { border-radius: 0 !important; transform: scale(0.75); }
 
 ion-fab { width: 45px; height: 45px; display: block; border-radius: 50%; }
 ion-fab ion-fab-button { width: 45px; height: 45px; display: block; background: #22C15E !important; border-radius: 50%; }
 
 
 
-p { font-family: 'futuraltlight'; }
+p { font-family: 'FuturaLT Light'; }
 
 ion-row.fila-cards-home ion-col ion-card { background: #001c7d !important; }
 ion-row.fila-cards-home ion-col ion-card.azul-01 { background: #2a489a !important; }
@@ -60,20 +56,20 @@ ion-row.fila-cards-home ion-col ion-card.azul-02 { background: #3E5BAC !importan
 
 ion-row.fila-cards-home ion-col ion-card a { text-decoration: none; }
 ion-row.fila-cards-home ion-col ion-card a img { margin: 25px auto 0 auto; }
-ion-row.fila-cards-home ion-col ion-card-subtitle { font-family: 'futuraltlight'; text-align: center; font-size: 0.9em; font-weight: 100 !important; color: #fff; padding: 0; text-transform: uppercase; letter-spacing: 0.055em; }
+ion-row.fila-cards-home ion-col ion-card-subtitle { text-align: center; font-size: 0.9em; font-weight: 100 !important; color: #fff; padding: 0; text-transform: uppercase; letter-spacing: 0.15em; }
 
 
 
 ion-row#row-titulo { background: #405DAE !important; }
-ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; padding: 10px 0 6px 0; font-family: 'futuraltlight'; letter-spacing: 0.075em; font-weight: 400; }
+ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; padding: 10px 0 6px 0; letter-spacing: 0.075em; font-weight: 400; }
 
-ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0; font-family: 'futuraltlight'; letter-spacing: 0.015em; }
+ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0; letter-spacing: 0.015em; }
 
-ion-label { font-family: 'futuraltlight' !important; color: #000 !important; font-weight: 400; font-size: 0.95em !important; }
+ion-label { font-family: "FuturaLT Light" !important; color: #000 !important; font-weight: 800; font-size: 0.8em !important; letter-spacing: 0.075em; text-transform: uppercase; }
 
 
 
-ion-row#row-serviespeciales ion-button { font-size: 0.9em; color: #fff; text-align: center; padding: 0; font-family: 'futuraltlight'; letter-spacing: 0.025em; }
+ion-row#row-serviespeciales ion-button { font-size: 0.9em; color: #fff; text-align: center; padding: 0; letter-spacing: 0.025em; }
 ion-row#row-serviespeciales ion-button button { border-radius: 5px; }
 
 
@@ -88,34 +84,44 @@ ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-chi
 
 
 
-ion-fab#zona-whatsapp { width: 200px !important; height: 40px !important; }
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp { width: 100% !important; border-radius: 5px !important; right: 50px; background: rgba(255,255,255,1); padding: 25px; box-shadow: 0 0 5px rgba(0,0,0,0.35); margin: 10px auto 20px auto; }
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-label { font-size: 0.8em !important; color: #000 !important; text-align: center; font-family: 'futuraltlight' !important; letter-spacing: 0.025em; padding: 15px 0 0 0; }
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { width: 100% !important; text-align: center !important; font-family: 'futuraltlight' !important; letter-spacing: 0.025em !important; color: #fff !important; border-radius: 5px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
+app-fab-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: fixed !important; bottom: 60px !important; right: 10px !important; border-radius: 50% !important; }
+
+ion-fab#zona-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 0; left: 0; right: 0; }
+
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp { width: 265px !important; border-radius: 5px !important; right: 15px; bottom: 25px; background: white; padding: 25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.35); margin: 10px auto 20px auto; }
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-label { font-size: 0.95em !important; color: #000 !important; text-align: center; letter-spacing: 0.025em; padding: 15px 0 0 0; text-transform: none; font-weight: 800; }
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { font-size: 0.85em; font-weight: 800; width: 100% !important; height: 45px; text-align: center !important; letter-spacing: 0.075em !important; color: #fff !important; border-radius: 5px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
 
 
 
-ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp { width: 40px !important; border-radius: 75px !important; height: 40px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; right: 0; float: right; margin: 0 20px 0 0; }
+ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp { width: 40px !important; border-radius: 75px !important; height: 40px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; right: 0; float: right; margin: 0 10px 0 0; }
 ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp button.button-native { box-shadow: none !important; }
 ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp ion-icon#logo-whatsapp { font-size: 1.55em; padding: 0 10px 0 0; }
-ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp ion-label#texto-whatsapp { font-family: 'futuraltlight'; text-align: left; font-size: 0.9em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
+ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp ion-label#texto-whatsapp { text-align: left; font-size: 0.9em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
 
 ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp:host(.ion-color) .button-native { box-shadow: none; }
 
-
-
 ion-grid#grid-servicios { display: block; background: url(assets/aux-bg-servicios.png) no-repeat 50% -50px; background-size: cover; padding: 0; height: 600px; }
 ion-grid#grid-servicios ion-row.fila-servicios { height: 165px; }
-ion-grid#grid-servicios ion-row.fila-servicios ion-col a { width: 100%; height: 165px; display: block; margin: 30px auto 0 auto; float: none; text-decoration: none; }
+ion-grid#grid-servicios ion-row.fila-servicios ion-col a { width: 100%; height: 130px; display: block; margin: 30px auto 0 auto; float: none; text-decoration: none; }
 ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-img { width: 100%; height: 104px; display: block; margin: 0 auto 5px auto; float: none; }
-ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-text { width: 100%; height: 35px; display: block; margin: 0 auto; float: none; font-family: 'futuraltlight'; text-align: center; font-size: 0.7em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
-
-
+ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-text { width: 100%; height: 35px; display: block; margin: 0 auto; float: none; text-align: center; font-size: 1em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
 
 img.icono-lista-se { border-radius: 10px !important; display: block !important; box-shadow: 0 0 5px rgba(0,0,0,0.35) !important; }
 
-
-
 ion-row#row-registro-proveedores ion-col ion-card a { text-decoration: none; }
 ion-row#row-registro-proveedores ion-col ion-card a ion-card-header { background: #001c7d !important; }
-ion-row#row-registro-proveedores ion-col ion-card a ion-card-header ion-card-subtitle { font-family: 'futuraltlight'; text-align: center; font-size: 0.9em; font-weight: 100 !important; color: #fff; padding: 0; text-transform: uppercase; letter-spacing: 0.055em; }
+ion-row#row-registro-proveedores ion-col ion-card a ion-card-header ion-card-subtitle { text-align: center; font-size: 0.9em; font-weight: 100 !important; color: #fff; padding: 0; text-transform: uppercase; letter-spacing: 0.055em; }
+
+.alert-wrapper.sc-ion-alert-md { background: #fff !important; }
+
+
+
+app-header ion-button { width: 55px !important; height: 35px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 10px !important; left: -7px !important; border-radius: 0 !important; }
+app-header ion-button #shadow-root button { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
+app-header ion-button #shadow-root button span.button-inner { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
+
+.icono-menu { width: 30px; height: 30px; display: block; margin: 0 15px 0 0; }
+
+
+
