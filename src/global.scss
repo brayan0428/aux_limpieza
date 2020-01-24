@@ -84,13 +84,13 @@ ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-chi
 
 
 
-app-fab-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: fixed !important; bottom: 60px !important; right: 10px !important; border-radius: 50% !important; }
+app-fab-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: fixed !important; bottom: 35px !important; right: 5px !important; border-radius: 50% !important; z-index: 99999; }
 
 ion-fab#zona-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 0; left: 0; right: 0; }
 
 ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp { width: 265px !important; border-radius: 5px !important; right: 15px; bottom: 25px; background: white; padding: 25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.35); margin: 10px auto 20px auto; }
 ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-label { font-size: 0.95em !important; color: #000 !important; text-align: center; letter-spacing: 0.025em; padding: 15px 0 0 0; text-transform: none; font-weight: 800; }
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { font-size: 0.85em; font-weight: 800; width: 100% !important; height: 45px; text-align: center !important; letter-spacing: 0.075em !important; color: #fff !important; border-radius: 5px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { font-size: 0.85em; line-height: 1em; font-weight: 800; width: 100% !important; height: auto; display: block; padding: 10px 15px; text-align: left !important; letter-spacing: 0.075em !important; color: #fff !important; border-radius: 5px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
 
 
 
@@ -122,6 +122,28 @@ app-header ion-button #shadow-root button { background: #fff !important; border-
 app-header ion-button #shadow-root button span.button-inner { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
 
 .icono-menu { width: 30px; height: 30px; display: block; margin: 0 15px 0 0; }
+
+ion-card-header#boton-inicio { padding: 14px 15px 9px 15px; }
+
+ion-list#list-ios-inicio { margin-bottom: 10px; }
+ion-list.list-md#list-ios-inicio { margin-bottom: 0; padding-top: 0; padding-bottom: 0; }
+
+img#logo-home { margin: 35px auto 0; }
+
+ion-content.md ion-avatar { margin-top: 0; margin-bottom: 0; }
+ion-content.md ion-card-header#boton-inicio { padding: 12px 15px 7px 15px; }
+
+ion-img.ico-user-wp { transform: scale(0.8); margin: 0 5px 0 0; }
+
+
+
+
+
+
+
+
+
+
 
 
 

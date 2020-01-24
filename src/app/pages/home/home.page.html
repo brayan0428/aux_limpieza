@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <!--<ion-toolbar>
     <ion-title>
       <img src="../../assets/aux-logo-nuevo-02.svg" width="80">
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar>-->
 </ion-header>
 
 <ion-content>
@@ -11,14 +11,14 @@
     <ion-row>
       <ion-col></ion-col>
       <ion-col size="5">
-        <img src="../../assets/aux-logo-nuevo-03.svg" width="150" height="100">
+        <img src="../../assets/aux-logo-nuevo-03.svg" width="150" height="100" id="logo-home">
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-list>
+        <ion-list id="list-ios-inicio">
           <ion-item routerLink="/solicitar-servicio" lines="full">
             <ion-avatar slot="start">
               <img src="../../assets/aux-001.svg" width="120" height="120">
@@ -54,25 +54,27 @@
       <ion-col>
         <ion-card>
           <a routerLink="/login" routerDirection="forward">
-            <ion-card-header>
+            <ion-card-header id="boton-inicio">
               <ion-card-subtitle>Iniciar Sesión</ion-card-subtitle>
             </ion-card-header>
           </a>
         </ion-card>
         <ion-card>
           <a routerLink="/registro" routerDirection="forward">
-            <ion-card-header>
+            <ion-card-header id="boton-inicio">
               <ion-card-subtitle>Registrarse</ion-card-subtitle>
             </ion-card-header>
           </a>
         </ion-card>
+        <!--
         <ion-card>
           <a routerLink="/registro-proveedores" routerDirection="forward">
-            <ion-card-header>
+            <ion-card-header id="boton-inicio">
               <ion-card-subtitle>Registro Proveedor</ion-card-subtitle>
             </ion-card-header>
           </a>
         </ion-card>
+        -->
       </ion-col>
     </ion-row>
 
