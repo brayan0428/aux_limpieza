@@ -6,25 +6,25 @@
       <ion-item>
         <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input type="text" name="nombre" ngModel required>
+        <ion-input type="text" name="nombre" [(ngModel)]="usuario.nombre" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Celular <ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input type="number" minlength="10" maxlength="10" name="telefono" ngModel required>
+        <ion-input type="number" minlength="10" maxlength="10" name="telefono" [(ngModel)]="usuario.telefono" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Dirección <ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input type="text" name="direccion" ngModel required>
+        <ion-input type="text" name="direccion" [(ngModel)]="usuario.direccion" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Ciudad<ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" [(ngModel)]="usuario.ciudad" name="ciudad" required>
           <ion-select-option value="">Seleccione</ion-select-option>
           <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.codigo">{{ciudad.nombre}}
           </ion-select-option>

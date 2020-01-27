@@ -10,7 +10,6 @@
 
       <ion-card-content>
         <b>Fecha Inicio: </b> {{solicitud.fecha_inicio}} <br>
-        <b>Fecha Fin: </b> {{solicitud.fecha_fin}} <br>
         <b>Cantidad Dias: </b> {{solicitud.cantidad_dias}} <br>
         <hr>
         <b>Hora Inicio: </b> {{solicitud.hora_inicio}} <br>
@@ -24,14 +23,11 @@
       </ion-card-header>
 
       <ion-card-content>
-        <b>Valor Dia: </b> {{valorxDia}} <br>
-        <b>Subtotal: </b> {{subtotal}} <br>
-        <b>Descuento {{porcentajeDescuento}}%: </b> {{descuento}} <br>
-        <b>Total: </b> {{total}} <br>
+        <b>Total a pagar: </b> {{total}} <br>
         <hr>
       </ion-card-content>
     </ion-card>
-    <ion-card>
+    <ion-card *ngIf="usserLogged">
       <ion-card-header>
         <ion-card-title>Pago</ion-card-title>
       </ion-card-header>

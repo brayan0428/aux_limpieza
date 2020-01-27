@@ -8,27 +8,27 @@
         </ion-label>
         <ion-select disabled [value]="servicio" okText="Ok" cancelText="Cancelar" ngModel name="servicio" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option *ngFor="let servicio of servicios" [value]="servicio.codigo">{{servicio.descripcion}}</ion-select-option>
+          <ion-select-option *ngFor="let servicio of servicios" [value]="servicio.codigo">{{servicio.descripcion}}
+          </ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label>Usuario<ion-text color="danger"> *</ion-text>
+        <ion-label>Ciudad<ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="usuario" required>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="ciudad" required>
           <ion-select-option value="">Seleccione</ion-select-option>
-          <ion-select-option *ngFor="let user of usuarios" [value]="user.id">{{user.nombre}}</ion-select-option>
+          <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.codigo">{{ciudad.nombre}}
+          </ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label>Tiempo de Servicio<ion-text color="danger"> *</ion-text>
+        <ion-label>Fecha servicio<ion-text color="danger"> *</ion-text>
         </ion-label>
         <ion-datetime display-format="DD/MM/YYYY" [min]="fechaAct" placeholder="Inicio" cancelText="Cancelar" ngModel
           name="fecha_inicio"></ion-datetime>
-        <ion-datetime display-format="DD/MM/YYYY" [min]="fechaAct" placeholder="Fin" cancelText="Cancelar" ngModel name="fecha_fin">
-        </ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-label>Duración (Horas)<ion-text color="danger"> *</ion-text>
+        <ion-label>Numero de horas<ion-text color="danger"> *</ion-text>
         </ion-label>
         <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="horas" required>
           <ion-select-option value="">Seleccione</ion-select-option>
@@ -36,9 +36,18 @@
         </ion-select>
       </ion-item>
       <ion-item>
+        <ion-label>Numero de días<ion-text color="danger"> *</ion-text>
+        </ion-label>
+        <ion-select value="" okText="Ok" cancelText="Cancelar" ngModel name="dias" required>
+          <ion-select-option value="">Seleccione</ion-select-option>
+          <ion-select-option *ngFor="let dia of dias">{{dia}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
         <ion-label>Hora de Inicio<ion-text color="danger"> *</ion-text>
         </ion-label>
-        <ion-datetime display-format="HH:mm" minute-values="0,30" placeholder="Inicio" cancelText="Cancelar" ngModel name="hora_inicio">
+        <ion-datetime display-format="h:mm a" picker-format="h:mm A" minute-values="0,30" placeholder="Inicio"
+          cancelText="Cancelar" ngModel name="hora_inicio">
         </ion-datetime>
       </ion-item>
       <br>

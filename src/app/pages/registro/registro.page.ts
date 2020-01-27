@@ -20,8 +20,8 @@ import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 })
 export class RegistroPage implements OnInit {
   ciudades: [];
-  acepta_terminos:boolean = false;
-  
+  acepta_terminos: boolean = false;
+
   constructor(
     private consultasService: ConsultasService,
     private procesosService: ProcesosService,
@@ -59,7 +59,11 @@ export class RegistroPage implements OnInit {
     await this.loading.showCargando("Espere...");
     this.procesosService.guardarUsuario(form).subscribe(data => {
       if (data["error"]) {
-        this.toast.mostrarNotificacion(data["message"], 2000);
+        let message = data["message"];
+        if (String(message).indexOf("Duplicate") > -1) {
+          message = "Ya existe un usuario registrado con el numero de cedula";
+        }
+        this.toast.mostrarNotificacion(message, 2000);
       } else {
         this.toast.mostrarNotificacion("Usuario creado exitosamente", 2000);
         this.navCtrl.navigateRoot("/home");

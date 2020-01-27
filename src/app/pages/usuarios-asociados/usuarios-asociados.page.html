@@ -3,7 +3,7 @@
 <ion-content>
   <app-title-page title="Usuarios Asociados"></app-title-page>
   <ion-content padding>
-    <ion-card *ngFor="let user of usuarios">
+    <ion-card *ngFor="let user of usuarios" (click)="mostrarModal(user.id)">
       <ion-card-content>
         <h3>{{user.nombre}}</h3>
         <p>{{user.telefono}}</p>
@@ -11,7 +11,7 @@
       </ion-card-content>
     </ion-card>
     <br />
-    <ion-button expand="full" (click)="mostrarModal()">
+    <ion-button expand="full" (click)="mostrarModal(0)">
       Nuevo Usuario Asociado
     </ion-button>
   </ion-content>

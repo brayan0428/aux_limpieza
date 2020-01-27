@@ -28,7 +28,7 @@ export class UsuariosAsociadosPage implements OnInit {
       });
   }
 
-  async mostrarModal() {
-    this.route.navigate(["/agregar-usuario-asociado"]);
+  async mostrarModal(id) {
+    this.route.navigate([`/agregar-usuario-asociado/${id}`]);
   }
 }

@@ -42,8 +42,7 @@ const routes: Routes = [
   {
     path: "solicitud-servicio/:servicio",
     loadChildren:
-      "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule",
-    canActivate: [AuthGuardService]
+      "./pages/solicitud-servicio/solicitud-servicio.module#SolicitudServicioPageModule"
   },
   {
     path: "grupos-servicios-especiales",
@@ -53,8 +52,7 @@ const routes: Routes = [
   {
     path: "confirmar-solicitud",
     loadChildren:
-      "./pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule",
-    canActivate: [AuthGuardService]
+      "./pages/confirmar-solicitud/confirmar-solicitud.module#ConfirmarSolicitudPageModule"
   },
   {
     path: "proveedores/:especialidad",
@@ -73,9 +71,14 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
-    path: "agregar-usuario-asociado",
+    path: "agregar-usuario-asociado/:id",
     loadChildren:
       "./pages/agregar-usuario-asociado/agregar-usuario-asociado.module#AgregarUsuarioAsociadoPageModule",
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: "mi-perfil",
+    loadChildren: "./pages/mi-perfil/mi-perfil.module#MiPerfilPageModule",
     canActivate: [AuthGuardService]
   }
 ];

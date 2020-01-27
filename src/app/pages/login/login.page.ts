@@ -11,6 +11,7 @@ import { UserService } from "src/app/services/user.service";
   styleUrls: ["./login.page.scss"]
 })
 export class LoginPage implements OnInit {
+  url: string = "";
   constructor(
     private consultasService: ConsultasService,
     private toast: ToastService,
@@ -19,6 +20,11 @@ export class LoginPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    let proxURL = localStorage.getItem("proxUrl");
+    if (proxURL !== null) {
+      this.url = proxURL;
+      console.log(this.url);
+    }
     localStorage.clear();
   }
 
@@ -39,13 +45,18 @@ export class LoginPage implements OnInit {
           return;
         }
       }
-      console.log(data);
       UserService.loggedUser = true;
       UserService.idUser = data[0]["id"];
       UserService.nombresUser = data[0]["nombres"];
       UserService.apellidosUser = data[0]["apellidos"];
       UserService.correoUser = data[0]["correo"];
-
+      UserService.cedulaUser = data[0]["cedula"];
+      UserService.ciudadUser = data[0]["ciudad"];
+      console.log(this.url);
+      if (this.url !== "") {
+        this.navCtrl.navigateRoot(this.url);
+        return;
+      }
       this.navCtrl.navigateRoot("/solicitar-servicio");
     });
   }

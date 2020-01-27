@@ -4,7 +4,7 @@ import { NavController } from "@ionic/angular";
 import { ConsultasService } from "src/app/services/consultas.service";
 import { LoadingService } from "src/app/services/loading.service";
 import { ToastService } from "../../services/toast.service";
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-confirmar-solicitud",
@@ -16,7 +16,7 @@ export class ConfirmarSolicitudPage implements OnInit {
   solicitud: Servicio;
   valores: any[] = [];
   formaPago: string;
-
+  usserLogged: boolean = false;
   valorxDia: number = 0;
   subtotal: number = 0;
   porcentajeDescuento: number = 0;
@@ -38,8 +38,9 @@ export class ConfirmarSolicitudPage implements OnInit {
   async ngOnInit() {}
 
   async ionViewWillEnter() {
+    this.usserLogged = UserService.loggedUser;
     this.solicitud = ConfirmarSolicitudPage.xSolicitud;
-    UserService.xServicio = this.solicitud
+    UserService.xServicio = this.solicitud;
     if (this.solicitud == undefined) {
       this.navCtrl.navigateRoot("/solicitar-servicio");
     }
@@ -61,13 +62,19 @@ export class ConfirmarSolicitudPage implements OnInit {
       this.descuento = this.subtotal * this.valores["Descuento"];
       this.total = this.valores["Total"];
       this.loading.stopCargando();
-      UserService.xServicio.valor_normal = this.valores["ValorOrdinario"]
-      UserService.xServicio.valor_especial = this.valores["ValorEspecial"]
-      UserService.xServicio.valor = this.valores["Total"]
+      UserService.xServicio.valor_normal = this.valores["ValorOrdinario"];
+      UserService.xServicio.valor_especial = this.valores["ValorEspecial"];
+      UserService.xServicio.valor = this.valores["Total"];
     });
   }
 
   RealizarPago() {
+    if (!this.usserLogged) {
+      this.toast.mostrarNotificacion("Debe iniciar sesión", 2500);
+      localStorage.setItem("proxUrl", "/confirmar-solicitud");
+      this.navCtrl.navigateRoot("/login");
+      return;
+    }
     if (this.formaPago == undefined || this.formaPago == "") {
       this.toast.mostrarNotificacion("Debe seleccionar la forma de pago", 2500);
       return;
