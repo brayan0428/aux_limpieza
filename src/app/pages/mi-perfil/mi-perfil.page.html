@@ -2,6 +2,76 @@
 
 <ion-content>
   <app-title-page title="Mi Perfil"></app-title-page>
+  <ion-content padding>
+    <form #formulario="ngForm" (ngSubmit)="guardarDatos(formulario.value)">
+        <ion-item>
+            <ion-label position="floating">Cedula<ion-text color="danger">*</ion-text></ion-label>
+            <ion-input type="number"
+                        name="cedula"
+                        required
+                        [(ngModel)]="user.cedula"
+                        disabled
+                        >
+            </ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nombres<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="nombres"
+                      [(ngModel)]="user.nombres"
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellidos<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="apellidos"
+                      [(ngModel)]="user.apellidos"
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Dirección<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text"
+                      name="direccion"
+                      [(ngModel)]="user.direccion"
+                      required
+                      class="ion-text-uppercase"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ciudad<ion-text color="danger">*</ion-text></ion-label>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" [(ngModel)]="user.ciudad" name="ciudad" required>
+              <ion-select-option value="">Seleccione</ion-select-option>
+              <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.codigo">{{ciudad.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono / Celular<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="number"
+                      name="telefono"
+                      required
+                      [(ngModel)]="user.telefono"
+                      >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="email"
+                      name="correo"
+                      required
+                      [(ngModel)]="user.email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          </ion-input>
+        </ion-item>
+      <ion-button type="submit" [disabled]="formulario.invalid" expand="full">Actualizar Datos</ion-button>
+  </form>
+</ion-content>
   <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 

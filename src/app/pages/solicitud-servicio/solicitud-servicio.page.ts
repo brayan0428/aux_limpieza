@@ -68,22 +68,33 @@ export class SolicitudServicioPage implements OnInit {
     let fecha = fecha_inicio,
       fechaini = fecha_inicio;
     let cantidad_dias = 1;
+    let existeDiaEspecial = false;
     while (cantidad_dias <= form.dias) {
       if (
         (fecha.isoWeekday() == 7 ||
           this.festivos.find(
             fes => fes.fecha === fecha.format("YYYY-MM-DD")
-          )) &&
-        form.horas < 4
+          ))
       ) {
-        this.toast.mostrarNotificacion(
+        existeDiaEspecial = true
+        if(form.horas < 4){
+                  this.toast.mostrarNotificacion(
           "Los domingos y festivos el servicio minimo es de 4 horas",
           2500
         );
         return;
+        }
+
       }
       fecha = fecha.add(1, "day");
       cantidad_dias++;
+    }
+    if(existeDiaEspecial && parseInt(form.dias) > 1){
+      this.toast.mostrarNotificacion(
+        "Los servicios para domingos, festivos y nocturnos deben ser unitarios",
+        2500
+      );
+      return;
     }
     this.xServicio = {
       id_empleado: 1,

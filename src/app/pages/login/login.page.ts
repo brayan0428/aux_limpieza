@@ -52,7 +52,8 @@ export class LoginPage implements OnInit {
       UserService.correoUser = data[0]["correo"];
       UserService.cedulaUser = data[0]["cedula"];
       UserService.ciudadUser = data[0]["ciudad"];
-      console.log(this.url);
+      UserService.telefonoUser = data[0]["telefono"];
+      UserService.direccionUser = data[0]["direccion"]
       if (this.url !== "") {
         this.navCtrl.navigateRoot(this.url);
         return;

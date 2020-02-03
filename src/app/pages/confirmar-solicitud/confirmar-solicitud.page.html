@@ -34,6 +34,15 @@
 
       <ion-card-content>
         <ion-item>
+          <ion-label>Usuario<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-select value="" okText="Ok" cancelText="Cancelar" [(ngModel)]="id_usuario" required>
+            <ion-select-option value="">Seleccione</ion-select-option>
+            <ion-select-option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombre}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
           <ion-label>Forma de Pago<ion-text color="danger">*</ion-text>
           </ion-label>
           <ion-select value="" okText="Ok" cancelText="Cancelar" name="forma_pago" [(ngModel)]="formaPago" required>

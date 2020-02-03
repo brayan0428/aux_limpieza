@@ -12,6 +12,8 @@ export class UserService {
   public static nombresUser: string;
   public static apellidosUser: string;
   public static correoUser: string;
+  public static telefonoUser: string;
+  public static direccionUser: string;
 
   public static xServicio: Servicio;
 
@@ -23,5 +25,8 @@ export class UserService {
     this.nombresUser = "";
     this.apellidosUser = "";
     this.correoUser = "";
+    this.ciudadUser = "";
+    this.direccionUser = "";
+    this.telefonoUser = "";
   }
 }

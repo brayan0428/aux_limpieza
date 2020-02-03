@@ -16,12 +16,14 @@ export class ConfirmarSolicitudPage implements OnInit {
   solicitud: Servicio;
   valores: any[] = [];
   formaPago: string;
+  id_usuario:string = "";
   usserLogged: boolean = false;
   valorxDia: number = 0;
   subtotal: number = 0;
   porcentajeDescuento: number = 0;
   descuento: number = 0;
   total: number = 0;
+  usuarios: any[];
 
   constructor(
     private navCtrl: NavController,
@@ -66,6 +68,14 @@ export class ConfirmarSolicitudPage implements OnInit {
       UserService.xServicio.valor_especial = this.valores["ValorEspecial"];
       UserService.xServicio.valor = this.valores["Total"];
     });
+
+    if(this.usserLogged){
+      this.consultasService
+      .obtenerUsuariosAsociados(UserService.idUser)
+      .subscribe((data: any) => {
+        this.usuarios = JSON.parse(data);
+      });
+    }
   }
 
   RealizarPago() {
@@ -75,6 +85,15 @@ export class ConfirmarSolicitudPage implements OnInit {
       this.navCtrl.navigateRoot("/login");
       return;
     }
+    if(this.id_usuario == ""){
+      this.toast.mostrarNotificacion("Debe seleccionar el usuario del servicio", 2500);
+      return;
+    }
+    UserService.xServicio.id_usuario = parseInt(this.id_usuario)
+    let user = this.usuarios.find(user => parseInt(user.id) === parseInt(this.id_usuario))
+    console.log(user)
+    UserService.xServicio.direccion = user.direccion
+    UserService.xServicio.ciudad = user.ciudad
     if (this.formaPago == undefined || this.formaPago == "") {
       this.toast.mostrarNotificacion("Debe seleccionar la forma de pago", 2500);
       return;

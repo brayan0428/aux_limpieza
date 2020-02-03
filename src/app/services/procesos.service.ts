@@ -29,4 +29,12 @@ export class ProcesosService {
   guardarUsuarioAsociado(user) {
     return this.http.post(`${this.url}/usuario-asociado`, user);
   }
+
+  eliminarUsuarioAsociado(user) {
+    return this.http.post(`${this.url}/eliminar-usuario-asociado`, user);
+  }
+
+  actualizarUsuario(user) {
+    return this.http.post(`${this.url}/actualizar-usuario`, user);
+  }
 }

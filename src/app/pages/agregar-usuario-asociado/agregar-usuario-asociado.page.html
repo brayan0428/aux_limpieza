@@ -32,5 +32,6 @@
       </ion-item>
       <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Guardar</ion-button>
     </form>
+    <ion-button expand="full" color="danger" *ngIf="id_usuario !== 0" (click)="eliminarUsuario()">Eliminar Usuario</ion-button>
   </ion-content>
 </ion-content>
