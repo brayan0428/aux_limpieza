@@ -34,9 +34,13 @@ ion-footer { background: #fff; }
 ion-footer ion-title a { width: 250px; height: 36px; display: block; margin: 0 auto; float: none; }
 ion-footer ion-title a img { margin: 10px auto; float: none; width: 217px; height: auto; display: block; }
 
-.sc-ion-card-md-h { margin-top: 5px; margin-bottom: 5px; }
+.sc-ion-card-md-h { margin-top: 5px; margin-bottom: 5px; border-radius: 3px; }
+.sc-ion-card-md-h:nth-child(2) { margin-bottom: 25px; }
+
 .sc-ion-card-md-s img { display: block; width: 50%; }
-.sc-ion-card-ios-h { margin-top: 5px; margin-bottom: 5px; }
+
+.sc-ion-card-ios-h { margin-top: 5px; margin-bottom: 5px; border-radius: 3px; }
+.sc-ion-card-ios-h:nth-child(2) { margin-bottom: 25px; }
 
 ion-footer ion-title.title-ios { -webkit-padding-start: 10px; padding-inline-start: 10px; -webkit-padding-end: 10px; padding-inline-end: 10px; }
 
@@ -61,16 +65,16 @@ ion-row.fila-cards-home ion-col ion-card-subtitle { text-align: center; font-siz
 
 
 ion-row#row-titulo { background: #405DAE !important; }
-ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; padding: 10px 0 6px 0; letter-spacing: 0.075em; font-weight: 400; }
+ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; padding: 12px 0 9px 0; letter-spacing: 0.15em; font-weight: 800; }
 
-ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0; letter-spacing: 0.015em; }
+ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0; font-weight: 900; letter-spacing: 0.075em; }
 
 ion-label { font-family: "FuturaLT Light" !important; color: #000 !important; font-weight: 800; font-size: 0.8em !important; letter-spacing: 0.075em; text-transform: uppercase; }
 
 
 
 ion-row#row-serviespeciales ion-button { font-size: 0.9em; color: #fff; text-align: center; padding: 0; letter-spacing: 0.025em; }
-ion-row#row-serviespeciales ion-button button { border-radius: 5px; }
+ion-row#row-serviespeciales ion-button button { border-radius: 3px; }
 
 
 
@@ -79,8 +83,8 @@ ion-row#row-boxes-providers ion-col ion-list ion-item .item-native { --min-heigh
 ion-row#row-boxes-providers ion-col ion-list ion-item ion-avatar { top: 0 !important; position: absolute !important; }
 ion-row#row-boxes-providers ion-col ion-list ion-item ion-label { position: absolute !important; top: 0 !important; right: 0 !important; width: 75% !important; margin: 0 !important; }
 ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav { position: absolute !important; bottom: 0 !important; left: 0 !important; top: 75px !important; }
-ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-child(1) { width: 48% !important; height: 2.75em !important; margin: 0 4% 0 0 !important; float: left !important; --border-radius: 5px; }
-ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-child(2) { width: 48% !important; height: 2.75em !important; margin: 0 !important; float: left !important; --border-radius: 5px; }
+ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-child(1) { width: 48% !important; height: 2.75em !important; margin: 0 4% 0 0 !important; float: left !important; --border-radius: 3px; }
+ion-row#row-boxes-providers ion-col ion-list ion-item ion-nav ion-button:nth-child(2) { width: 48% !important; height: 2.75em !important; margin: 0 !important; float: left !important; --border-radius: 3px; }
 
 
 
@@ -88,9 +92,9 @@ app-fab-whatsapp { width: 45px !important; height: 45px !important; display: blo
 
 ion-fab#zona-whatsapp { width: 45px !important; height: 45px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 0; left: 0; right: 0; }
 
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp { width: 265px !important; border-radius: 5px !important; right: 15px; bottom: 25px; background: white; padding: 25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.35); margin: 10px auto 20px auto; }
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp { width: 265px !important; border-radius: 3px !important; right: 15px; bottom: 25px; background: white; padding: 25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.35); margin: 10px auto 20px auto; }
 ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-label { font-size: 0.95em !important; color: #000 !important; text-align: center; letter-spacing: 0.025em; padding: 15px 0 0 0; text-transform: none; font-weight: 800; }
-ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { font-size: 0.85em; line-height: 1em; font-weight: 800; width: 100% !important; height: auto; display: block; padding: 10px 15px; text-align: left !important; letter-spacing: 0.075em !important; color: #fff !important; border-radius: 5px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
+ion-fab#zona-whatsapp ion-fab-list#lista-whatsapp ion-button { font-size: 0.85em; line-height: 1em; font-weight: 800; width: 100% !important; height: auto; display: block; padding: 10px 15px; text-align: left !important; letter-spacing: 0.075em !important; color: #fff !important; border-radius: 3px !important; background: #309903 !important; --ion-color-base: #309903 !important; --ion-color-base-rgb: var(--ion-color-dark-rgb, 255,255,0) !important; --ion-color-shade: #309903 !important; --ion-color-tint: #309903 !important; --background-activated: #309903; }
 
 
 
@@ -103,11 +107,16 @@ ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp:host(.ion-color) .button-na
 
 ion-grid#grid-servicios { display: block; background: url(assets/aux-bg-servicios.png) no-repeat 50% -50px; background-size: cover; padding: 0; height: 600px; }
 ion-grid#grid-servicios ion-row.fila-servicios { height: 165px; }
+
+ion-grid#grid-servicios ion-row.fila-servicios ion-col:nth-child(1) { margin-left: 7%; }
+ion-grid#grid-servicios ion-row.fila-servicios ion-col:nth-child(3) { margin-left: 7%; }
+ion-grid#grid-servicios ion-row.fila-servicios ion-col:nth-child(5) { margin-left: 7%; }
+
 ion-grid#grid-servicios ion-row.fila-servicios ion-col a { width: 100%; height: 130px; display: block; margin: 30px auto 0 auto; float: none; text-decoration: none; }
 ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-img { width: 100%; height: 104px; display: block; margin: 0 auto 5px auto; float: none; }
-ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-text { width: 100%; height: 35px; display: block; margin: 0 auto; float: none; text-align: center; font-size: 1em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
+ion-grid#grid-servicios ion-row.fila-servicios ion-col a ion-text { width: 100%; height: 35px; display: block; margin: 0 auto; float: none; text-align: center; font-size: 0.85em; font-weight: 100 !important; color: #fff; letter-spacing: 0.025em; }
 
-img.icono-lista-se { border-radius: 10px !important; display: block !important; box-shadow: 0 0 5px rgba(0,0,0,0.35) !important; }
+img.icono-lista-se { border-radius: 3px !important; display: block !important; border-radius: 50% !important; }
 
 ion-row#row-registro-proveedores ion-col ion-card a { text-decoration: none; }
 ion-row#row-registro-proveedores ion-col ion-card a ion-card-header { background: #001c7d !important; }
@@ -118,12 +127,15 @@ ion-row#row-registro-proveedores ion-col ion-card a ion-card-header ion-card-sub
 
 
 app-header ion-button { width: 55px !important; height: 35px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 10px !important; left: -7px !important; border-radius: 0 !important; }
-app-header ion-button #shadow-root button { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
+app-header ion-button #shadow-root button { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; border-radius: 3px !important; }
 app-header ion-button #shadow-root button span.button-inner { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
 
 .icono-menu { width: 30px; height: 30px; display: block; margin: 0 15px 0 0; }
 
 ion-card-header#boton-inicio { padding: 14px 15px 9px 15px; }
+ion-card-header#boton-inicio { padding: 14px 15px 9px 15px; background: #162C8C !important; text-decoration: none !important; }
+ion-card-header#boton-inicio:host { color: #fff !important; text-decoration: none !important; text-align: center !important; }
+ion-card-header#boton-inicio ion-card-subtitle { color: #fff !important; text-decoration: none !important; text-align: center !important; }
 
 ion-list#list-ios-inicio { margin-bottom: 10px; }
 ion-list.list-md#list-ios-inicio { margin-bottom: 0; padding-top: 0; padding-bottom: 0; }
@@ -131,9 +143,41 @@ ion-list.list-md#list-ios-inicio { margin-bottom: 0; padding-top: 0; padding-bot
 img#logo-home { margin: 35px auto 0; }
 
 ion-content.md ion-avatar { margin-top: 0; margin-bottom: 0; }
-ion-content.md ion-card-header#boton-inicio { padding: 12px 15px 7px 15px; }
+ion-content.md ion-card-header#boton-inicio { padding: 12px 15px 7px 15px; background: #162C8C !important; text-decoration: none !important; }
+ion-content.md ion-card-header#boton-inicio:host { color: #fff !important; text-decoration: none !important; text-align: center !important; }
+ion-content.md ion-card-header#boton-inicio ion-card-subtitle { color: #fff !important; text-decoration: none !important; text-align: center !important; letter-spacing: 0.095em !important; font-weight: 600 !important; }
+
+ion-card#button-proveedores { margin-top: -40px; margin-bottom: 45px; }
+ion-card#button-proveedores a { text-decoration: none !important; }
 
 ion-img.ico-user-wp { transform: scale(0.8); margin: 0 5px 0 0; }
+
+.alert-radio-label.sc-ion-alert-md { -webkit-padding-end: 10px !important; padding-inline-end: 10px !important; font-weight: 800 !important; letter-spacing: 0.055em !important; }
+.alert-button.sc-ion-alert-md { font-weight: 800 !important; letter-spacing: 0.085em !important; }
+
+.picker-wrapper.sc-ion-picker-md { background: #fff !important; }
+.picker-wrapper.sc-ion-picker-md .picker-button.sc-ion-picker-md,
+.picker-wrapper.sc-ion-picker-md .picker-button.activated.sc-ion-picker-md { font-weight: 800 !important; letter-spacing: 0.085em !important; }
+
+div.picker-opts { margin-top: -82px !important; }
+
+.sc-ion-card-md-h { background: #fff !important; letter-spacing: 0.025em; font-weight: 600; color: #000; }
+
+.native-input.sc-ion-input-ios,
+.native-input.sc-ion-input-md { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; }
+
+ion-select,
+ion-select-option { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; }
+
+ion-badge { border-radius: 50%; width: 25px; height: 25px; padding: 7px 0; font-size: 0.75em; font-weight: bold; }
+
+.sc-ion-label-md-s h2 { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; color: #001D7E !important; }
+
+
+
+
+
+
 
 
 

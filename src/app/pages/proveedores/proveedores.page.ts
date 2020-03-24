@@ -51,8 +51,9 @@ export class ProveedoresPage implements OnInit {
       return;
     }
     this.proveedoresFilter = this.proveedores.filter(p => {
+      console.log(p)
       return (
-        p.codigoCiudad.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
+        p.codigoCiudad.toLowerCase().indexOf(ciudad.toLowerCase()) > -1
       );
     });
   }

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-back-button></app-back-button>
 
 <ion-content>
   <app-title-page title="¡Aquí están sólo los mejores!"></app-title-page>
@@ -15,14 +15,13 @@
 
     <ion-col size="10">
       <ion-list>
-        <ion-item *ngFor="let proveedor of proveedoresFilter">
-          <ion-avatar slot="start">
-            <img src="../../assets/aux-provider-001.jpg">
-          </ion-avatar>
-
-          <ion-label>
-            <h2>{{proveedor.nombres}} {{proveedor.apellidos}}</h2>
-            <h3>{{proveedor.especialidad}}</h3>
+        <ion-card *ngFor="let proveedor of proveedoresFilter">
+          <img src="../../assets/aux-provider-001.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>{{proveedor.especialidad}}</ion-card-subtitle>
+            <ion-card-title>{{proveedor.nombres}} {{proveedor.apellidos}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
             <h3><i>{{proveedor.ciudad}}</i></h3>
             <p>
               <ion-icon name="star"></ion-icon>
@@ -31,17 +30,16 @@
               <ion-icon name="star"></ion-icon>
               <ion-icon name="star-half"></ion-icon>
             </p>
-          </ion-label>
-
-          <ion-nav *ngIf="userLogged">
-            <ion-button expand="full" color="primary" shape="round" size="small">
-              <ion-icon name="call" slot="icon-only"></ion-icon>
-            </ion-button>
-            <ion-button expand="full" color="success" shape="round" size="small">
-              <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
-            </ion-button>
-          </ion-nav>
-        </ion-item>
+            <ion-nav *ngIf="userLogged">
+              <ion-button expand="full" color="primary" shape="round" size="small">
+                <ion-icon name="call" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button expand="full" color="success" shape="round" size="small">
+                <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-nav>
+          </ion-card-content>
+        </ion-card>
       </ion-list>
     </ion-col>
 

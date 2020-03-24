@@ -9,7 +9,12 @@ import { LoadingService } from 'src/app/services/loading.service';
 })
 export class GruposServiciosEspecialesPage implements OnInit {
   grupos: any[] = [];
-
+  slideOptsOne = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay:true
+   };
+   
   constructor(private consultasService: ConsultasService,
               private loading:LoadingService) {}
 
