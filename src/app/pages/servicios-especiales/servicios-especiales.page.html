@@ -17,7 +17,7 @@
     <ion-col>
       <ion-item routerLink="/proveedores/{{especialidad.codigo}}" routerDirection="forward" *ngFor="let especialidad of especialidades">
         <ion-avatar slot="start">
-          <img src="../../assets/aux-plomeros.jpg" class="icono-lista-se">
+          <img [src]="especialidad.icono" class="icono-lista-se">
         </ion-avatar>
         <ion-label>{{especialidad.nombre}}</ion-label>
         <ion-badge slot="end">{{especialidad.Cantidad}}</ion-badge>
