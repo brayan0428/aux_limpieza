@@ -1,8 +1,59 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-title-page title="Lista de Precios"></app-title-page>
-  <app-fab-whatsapp></app-fab-whatsapp>
+    <app-title-page title="Lista de Precios"></app-title-page>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card class="card-precios">
+                    <ion-card-header>
+                        <ion-card-subtitle>Paquetes más comprados para tu economía en</ion-card-subtitle>
+                        <ion-card-title>Bogotá, Medellín y Cali</ion-card-title>
+                        <ion-img src="assets/aux-bogota.jpg"></ion-img>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <h4>2 veces por semana</h4>
+                        <h5>4 horas / 8 días al mes</h5>
+                        <p class="precio-normal">Precio normal: <strong>$ 520.000</strong></p>
+                        <p class="precio-descuento">Precio descuento: <strong>$ 494.000</strong></p>
+                        
+                        <hr>
+                        
+                        <h4>3 veces por semana</h4>
+                        <h5>4 horas / 12 días al mes</h5>
+                        <p class="precio-normal">Precio normal: <strong>$ 780.000</strong></p>
+                        <p class="precio-descuento">Precio descuento: <strong>$ 702.000</strong></p>
+                    </ion-card-content>
+                </ion-card>
+                
+                <ion-card class="card-precios">
+                    <ion-card-header>
+                        <ion-card-subtitle>Paquetes más comprados para tu economía en</ion-card-subtitle>
+                        <ion-card-title>Costa Atlántica y resto del país</ion-card-title>
+                        <ion-img src="assets/aux-barranquilla.jpg"></ion-img>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <h4>2 veces por semana</h4>
+                        <h5>4 horas / 8 días al mes</h5>
+                        <p class="precio-normal">Precio normal: <strong>$ 432.000</strong></p>
+                        <p class="precio-descuento">Precio descuento: <strong>$ 410.400</strong></p>
+                        
+                        <hr>
+                        
+                        <h4>3 veces por semana</h4>
+                        <h5>4 horas / 12 días al mes</h5>
+                        <p class="precio-normal">Precio normal: <strong>$ 648.000</strong></p>
+                        <p class="precio-descuento">Precio descuento: <strong>$ 583.200</strong></p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+    <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 
 <app-footer></app-footer>

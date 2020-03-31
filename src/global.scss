@@ -24,9 +24,10 @@
 
 
 
-ion-header { background: #001d7e; }
+ion-header { background: #fff; }
 ion-header img { display: block; margin: 0 auto; float: none; }
 ion-header ion-title#logo-interno { float: right; padding: 10px 7px; }
+ion-header ion-title#logo-interno img { display: block; margin: 0 auto; float: none; }
 
 ion-content { display: block; background: url(assets/bg1.png) no-repeat top center; background-size: cover; padding: 0 0 55px 0; position: relative; overflow: hidden; }
 
@@ -54,7 +55,7 @@ ion-fab ion-fab-button { width: 45px; height: 45px; display: block; background: 
 
 p { font-family: 'FuturaLT Light'; }
 
-ion-row.fila-cards-home ion-col ion-card { background: #001c7d !important; }
+ion-row.fila-cards-home ion-col ion-card { background: #001c7d !important; margin-bottom: 5px !important; }
 ion-row.fila-cards-home ion-col ion-card.azul-01 { background: #2a489a !important; }
 ion-row.fila-cards-home ion-col ion-card.azul-02 { background: #3E5BAC !important; }
 
@@ -64,10 +65,10 @@ ion-row.fila-cards-home ion-col ion-card-subtitle { text-align: center; font-siz
 
 
 
-ion-row#row-titulo { background: #405DAE !important; }
-ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; padding: 12px 0 9px 0; letter-spacing: 0.15em; font-weight: 800; }
+ion-row#row-titulo { background: #001d7e !important; }
+ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-align: center; letter-spacing: 0.055em; padding: 0; font-weight: 800; }
 
-ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0; font-weight: 900; letter-spacing: 0.075em; }
+ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0 0 8px; font-weight: 900; letter-spacing: 0.075em; margin-top: 5px; margin-bottom: 0; border-bottom: solid 1px rgba(0, 29, 126, 0.55); }
 
 ion-label { font-family: "FuturaLT Light" !important; color: #000 !important; font-weight: 800; font-size: 0.8em !important; letter-spacing: 0.075em; text-transform: uppercase; }
 
@@ -126,7 +127,7 @@ ion-row#row-registro-proveedores ion-col ion-card a ion-card-header ion-card-sub
 
 
 
-app-header ion-button { width: 55px !important; height: 35px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 10px !important; left: -7px !important; border-radius: 0 !important; }
+app-header ion-button { width: 55px !important; height: 32px !important; display: block !important; margin: 0 !important; float: none !important; position: absolute !important; top: 10px !important; left: -7px !important; border-radius: 0 !important; }
 app-header ion-button #shadow-root button { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; border-radius: 3px !important; }
 app-header ion-button #shadow-root button span.button-inner { background: #fff !important; border-radius: 0 3px 3px 0 !important; color: #001d7e !important; font-size: 1.15em !important; padding: 0 !important; }
 
@@ -173,19 +174,54 @@ ion-badge { border-radius: 50%; width: 25px; height: 25px; padding: 7px 0; font-
 
 .sc-ion-label-md-s h2 { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; color: #001D7E !important; }
 
+ion-card-title { color: #001d7e !important; }
+
+
+
+ion-card.card-precios { margin-bottom: 25px; background: #fff; }
+ion-card.card-precios ion-card-header { background: #001d7e; }
+ion-card.card-precios ion-card-header ion-card-subtitle { color: #999; font-weight: 900; font-size: 0.9em; line-height: 1.2em; letter-spacing: 0.075em; text-transform: uppercase; }
+ion-card.card-precios ion-card-header ion-card-title { color: #fff !important; font-weight: bolder; padding-top: 0; padding-bottom: 8px; letter-spacing: 0.075em; line-height: 1em; font-size: 1.75em; }
+ion-card.card-precios ion-card-header ion-img { padding: 20px 0 0; transform: scale(1.5); }
+
+ion-card.card-precios ion-card-content { background: #fff; margin: 20px auto 0; }
+
+ion-card.card-precios ion-card-content h4,
+ion-card.card-precios ion-card-content h5,
+ion-card.card-precios ion-card-content h6 { color: #333; font-weight: 900; font-size: 1em; padding: 0 0 2px; }
+
+ion-card.card-precios ion-card-content h4 { margin-top: 0; font-size: 1.3em; color: #000; }
+
+ion-card.card-precios ion-card-content p.precio-normal { text-decoration: line-through; color: #910000; font-weight: 900; font-size: 0.95em; }
+ion-card.card-precios ion-card-content p.precio-descuento { color: #333; font-weight: 500; font-size: 1.1em; }
+ion-card.card-precios ion-card-content p.precio-descuento strong { color: #000; font-weight: 900; }
+
+ion-card.card-precios ion-card-content hr { width: 90%; height: 1px; display: block; margin: 15px auto; float: none; position: relative; border: none; outline: none; border-radius: 50%; background: rgba(0, 29, 126, 0.55); }
+
+.sc-ion-card-md-h { margin-bottom: 25px !important; background: #fff !important; }
+.sc-ion-card-ios-h { margin-bottom: 25px !important; background: #fff !important; }
+
+.sc-ion-card-md-s img { width: 100% !important; }
+
+ion-icon[name="star"] { color: #001d7e !important; }
+ion-icon[name="star-half"] { color: #001d7e !important; }
 
 
 
 
 
+ion-card.card-tyc { margin-bottom: 25px; background: #fff; }
+ion-card.card-tyc ion-card-header { background: #001d7e; }
+ion-card.card-tyc ion-card-header ion-card-subtitle { color: #000; font-weight: 900; font-size: 1em; line-height: 1.2em; letter-spacing: 0.075em; text-transform: uppercase; }
+ion-card.card-tyc ion-card-header ion-card-title { color: #fff !important; font-weight: bolder; padding-top: 0; padding-bottom: 8px; letter-spacing: 0.075em; line-height: 1em; font-size: 1.75em; }
+ion-card.card-tyc ion-card-header ion-img { padding: 20px 0 0; transform: scale(1.5); }
 
+ion-card.card-tyc ion-card-content { background: #fff; margin: 20px auto 0; }
 
-
-
-
-
-
-
+ion-card.card-tyc ion-card-content ion-card-subtitle { color: #001d7e; font-weight: 900; font-size: 1.1em; line-height: 1.2em; letter-spacing: 0.075em; padding: 20px 0 5px; }
+ion-card.card-tyc ion-card-content p { color: #000; font-weight: 800; font-size: 1em; text-align: left; }
+ion-card.card-tyc ion-card-content p strong { color: #000; font-weight: 900; }
+ion-card.card-tyc ion-card-content p.texto-indentado { padding: 0 0 0 10px; }
 
 
 
