@@ -80,7 +80,8 @@ const routes: Routes = [
     path: "mi-perfil",
     loadChildren: "./pages/mi-perfil/mi-perfil.module#MiPerfilPageModule",
     canActivate: [AuthGuardService]
-  }
+  },
+  { path: 'terminosycondiciones', loadChildren: './pages/terminosycondiciones/terminosycondiciones.module#TerminosycondicionesPageModule' }
 ];
 
 @NgModule({
