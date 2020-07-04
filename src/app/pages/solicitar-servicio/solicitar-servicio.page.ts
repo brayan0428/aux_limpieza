@@ -21,6 +21,7 @@ export class SolicitarServicioPage implements OnInit {
       this.servicios = JSON.parse(data);
       this.loading.stopCargando();
     });
+    console.log(UserService.loggedUser)
   }
 
   ionViewDidEnter() {}

@@ -14,7 +14,7 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(route:ActivatedRouteSnapshot):boolean{
     this.logged =  UserService.loggedUser
-    console.log(route)
+    console.log("Logueado", this.logged)
     let proxUrl = route.routeConfig.path;
     if(!this.logged){
       if(proxUrl === 'login' || proxUrl === 'registro' || proxUrl === 'home'){

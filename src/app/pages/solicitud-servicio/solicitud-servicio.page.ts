@@ -37,7 +37,6 @@ export class SolicitudServicioPage implements OnInit {
       this.servicios = JSON.parse(data);
       this.servicio = this.route.snapshot.paramMap.get("servicio");
     });
-
     /*this.consultasService
       .obtenerUsuariosAsociados(UserService.idUser)
       .subscribe((data: any) => {
@@ -64,6 +63,7 @@ export class SolicitudServicioPage implements OnInit {
     console.log(form);
     var fecha_inicio = moment(form.fecha_inicio);
     var fecha_fin = moment(form.fecha_fin);
+    const diaActual = moment().format("DD/MM/YYYY")
     // Valido si hay alguna fecha que sea domingo o festivo
     let fecha = fecha_inicio,
       fechaini = fecha_inicio;
@@ -95,6 +95,19 @@ export class SolicitudServicioPage implements OnInit {
         2500
       );
       return;
+    }
+    if(diaActual === fecha_inicio.format("DD/MM/YYYY")){
+      const horaSeleccionada = moment(form.hora_inicio)
+      const horaActual = moment()
+      const duration = moment.duration(horaActual.diff(horaSeleccionada))
+      const hours = duration.asHours()
+      if(hours > -2){
+        this.toast.mostrarNotificacion(
+          "Debe solicitar el servicio minimo dos horas antes",
+          2500
+        );
+        return;
+      }
     }
     this.xServicio = {
       id_empleado: 1,
