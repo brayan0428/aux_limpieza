@@ -1,32 +1,34 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-title-page title="Iniciar Sesión"></app-title-page>
-  <ion-content padding>
-    <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin.value)">
-      <ion-item>
-        <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input type="email" name="correo" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input type="password" name="clave" ngModel required></ion-input>
-      </ion-item>
-      <ion-button expand="full" type="submit" [disabled]="formLogin.invalid">
-        Iniciar Sesión
-      </ion-button>
-    </form>
-    <ion-item>
-      <ion-text>¿Aun no te has registrado? <a routerLink="/registro">Hazlo aquí</a></ion-text>
-    </ion-item>
-    <ion-item>
-      <a routerLink="">¿Olvidaste tu contraseña?</a>
-    </ion-item>
-  </ion-content>
-  <app-fab-whatsapp></app-fab-whatsapp>
+    <app-title-page title="Iniciar Sesión"></app-title-page>
+    <ion-content padding>
+        <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin.value)">
+            <ion-item>
+                <ion-label position="floating">E-Mail
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input type="email" name="correo" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input type="password" name="clave" ngModel required></ion-input>
+            </ion-item>
+            <ion-button expand="full" type="submit" [disabled]="formLogin.invalid">
+                Iniciar Sesión
+            </ion-button>
+        </form>
+        <ion-item>
+            <ion-text>¿Aun no te has registrado? <a routerLink="/registro">Hazlo aquí</a></ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-text><a routerLink="/olvido-contrasena">¿Olvidaste tu contraseña?</a></ion-text>
+        </ion-item>
+    </ion-content>
+    <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 
 <app-footer></app-footer>

@@ -51,4 +51,8 @@ export class ConsultasService {
   obtenerFestivos() {
     return this.http.get(`${this.url}/festivos`);
   }
+
+  olvidoContrasena(data) {
+    return this.http.post(`${this.url}/olvido-contrasena`, data);
+  }
 }

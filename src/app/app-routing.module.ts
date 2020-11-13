@@ -81,7 +81,8 @@ const routes: Routes = [
     loadChildren: "./pages/mi-perfil/mi-perfil.module#MiPerfilPageModule",
     canActivate: [AuthGuardService]
   },
-  { path: 'terminosycondiciones', loadChildren: './pages/terminosycondiciones/terminosycondiciones.module#TerminosycondicionesPageModule' }
+  { path: 'terminosycondiciones', loadChildren: './pages/terminosycondiciones/terminosycondiciones.module#TerminosycondicionesPageModule' },  { path: 'olvido-contrasena', loadChildren: './pages/olvido-contrasena/olvido-contrasena.module#OlvidoContrasenaPageModule' }
+
 ];
 
 @NgModule({
