@@ -69,6 +69,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "mx.ferreyra.callnumber": "0.0.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
@@ -88,9 +89,14 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-vibration": {},
       "cordova-plugin-file-transfer": {},
-      "cordova-plugin-file-opener2": {},
-      "mx.ferreyra.callnumber": {}
+      "cordova-plugin-file-opener2": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "mx.ferreyra.callnumber": {},
+      "call-number": {}
     },
-    "platforms": []
+    "platforms": [
+      "android"
+    ]
   }
 }

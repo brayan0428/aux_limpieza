@@ -5,18 +5,19 @@ import { ConsultasService } from "src/app/services/consultas.service";
 import { LoadingService } from "src/app/services/loading.service";
 import { ToastService } from "../../services/toast.service";
 import { UserService } from "src/app/services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-confirmar-solicitud",
   templateUrl: "./confirmar-solicitud.page.html",
-  styleUrls: ["./confirmar-solicitud.page.scss"]
+  styleUrls: ["./confirmar-solicitud.page.scss"],
 })
 export class ConfirmarSolicitudPage implements OnInit {
   public static xSolicitud: Servicio;
   solicitud: Servicio;
   valores: any[] = [];
   formaPago: string;
-  id_usuario:string = "";
+  id_usuario: string = "";
   usserLogged: boolean = false;
   valorxDia: number = 0;
   subtotal: number = 0;
@@ -29,7 +30,8 @@ export class ConfirmarSolicitudPage implements OnInit {
     private navCtrl: NavController,
     private consultasService: ConsultasService,
     private loading: LoadingService,
-    private toast: ToastService
+    private toast: ToastService,
+    private router: Router
   ) {
     this.solicitud = ConfirmarSolicitudPage.xSolicitud;
     if (this.solicitud == undefined) {
@@ -51,7 +53,7 @@ export class ConfirmarSolicitudPage implements OnInit {
       ciudad: this.solicitud.ciudad,
       dias: this.solicitud.cantidad_dias,
       horas: this.solicitud.horas,
-      fecha_inicio: this.solicitud.fecha_inicio
+      fecha_inicio: this.solicitud.fecha_inicio,
     };
     await this.loading.showCargando("Cargando...");
     this.consultasService.obtenerValorServicio(data).subscribe((data: any) => {
@@ -69,12 +71,12 @@ export class ConfirmarSolicitudPage implements OnInit {
       UserService.xServicio.valor = this.valores["Total"];
     });
 
-    if(this.usserLogged){
+    if (this.usserLogged) {
       this.consultasService
-      .obtenerUsuariosAsociados(UserService.idUser)
-      .subscribe((data: any) => {
-        this.usuarios = JSON.parse(data);
-      });
+        .obtenerUsuariosAsociados(UserService.idUser)
+        .subscribe((data: any) => {
+          this.usuarios = JSON.parse(data);
+        });
     }
   }
 
@@ -82,24 +84,29 @@ export class ConfirmarSolicitudPage implements OnInit {
     if (!this.usserLogged) {
       this.toast.mostrarNotificacion("Debe iniciar sesión", 2500);
       localStorage.setItem("proxUrl", "/confirmar-solicitud");
-      this.navCtrl.navigateRoot("/login");
+      this.navCtrl.navigateRoot("/registro");
       return;
     }
-    if(this.id_usuario == ""){
-      this.toast.mostrarNotificacion("Debe seleccionar el usuario del servicio", 2500);
+    if (this.id_usuario == "") {
+      this.toast.mostrarNotificacion(
+        "Debe seleccionar el usuario del servicio",
+        2500
+      );
       return;
     }
-    UserService.xServicio.id_usuario = parseInt(this.id_usuario)
-    let user = this.usuarios.find(user => parseInt(user.id) === parseInt(this.id_usuario))
-    console.log(user)
-    UserService.xServicio.direccion = user.direccion
-    UserService.xServicio.ciudad = user.ciudad
+    UserService.xServicio.id_usuario = parseInt(this.id_usuario);
+    let user = this.usuarios.find(
+      (user) => parseInt(user.id) === parseInt(this.id_usuario)
+    );
+    console.log(user);
+    UserService.xServicio.direccion = user.direccion;
+    UserService.xServicio.ciudad = user.ciudad;
     if (this.formaPago == undefined || this.formaPago == "") {
       this.toast.mostrarNotificacion("Debe seleccionar la forma de pago", 2500);
       return;
     }
     if (this.formaPago == "TC") {
-      this.navCtrl.navigateRoot("/fp-tarjetacredito");
+      this.router.navigate(["/fp-tarjetacredito"]);
     }
   }
 }
