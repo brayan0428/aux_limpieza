@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { URL_API } from "../../environments/environment";
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ConsultasService {
   private url: string = URL_API;
@@ -11,7 +11,7 @@ export class ConsultasService {
   obtenerCiudades() {
     return this.http.get(`${this.url}/ciudades`);
   }
-  
+
   validarLogin(user) {
     return this.http.post(`${this.url}/usuario`, user);
   }
@@ -54,5 +54,13 @@ export class ConsultasService {
 
   olvidoContrasena(data) {
     return this.http.post(`${this.url}/olvido-contrasena`, data);
+  }
+
+  obtenerServiciosxUsuario(id) {
+    return this.http.get(`${this.url}/serviciosxusuario/${id}`);
+  }
+
+  obtenerUsuario(id) {
+    return this.http.get(`${this.url}/usuario/${id}`);
   }
 }

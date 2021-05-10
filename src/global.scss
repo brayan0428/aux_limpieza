@@ -14,12 +14,15 @@
 
 /* Futura LT Light */
 @font-face {
-  font-family: 'FuturaLT Light';
-  src: url('assets/Futura/FuturaLT-Light.ttf');
-  src: url('assets/Futura/FuturaLT-Light.ttf');
+  font-family: 'Quicksand';
+  src: url('assets/Quicksand/Quicksand-Bold.ttf');
+  src: url('assets/Quicksand/Quicksand-Light.ttf');
+  src: url('assets/Quicksand/Quicksand-Medium.ttf');
+  src: url('assets/Quicksand/Quicksand-Regular.ttf');
+  src: url('assets/Quicksand/Quicksand-SemiBold.ttf');
 }
 * {
-  font-family: 'FuturaLT Light';
+  font-family: 'Quicksand';
 }
 
 
@@ -53,7 +56,7 @@ ion-fab ion-fab-button { width: 45px; height: 45px; display: block; background: 
 
 
 
-p { font-family: 'FuturaLT Light'; }
+p { font-family: 'Quicksand'; }
 
 ion-row.fila-cards-home ion-col ion-card { background: #001c7d !important; margin-bottom: 5px !important; }
 ion-row.fila-cards-home ion-col ion-card.azul-01 { background: #2a489a !important; }
@@ -70,7 +73,7 @@ ion-row#row-titulo h2 { margin: 0 auto; font-size: 0.9em; color: #fff; text-alig
 
 ion-row#row-txt-serviespeciales h5 { font-size: 0.9em; line-height: 1.35em; text-align: center; padding: 0 0 8px; font-weight: 900; letter-spacing: 0.075em; margin-top: 5px; margin-bottom: 0; border-bottom: solid 1px rgba(0, 29, 126, 0.55); }
 
-ion-label { font-family: "FuturaLT Light" !important; color: #000 !important; font-weight: 800; font-size: 0.8em !important; letter-spacing: 0.075em; text-transform: uppercase; }
+ion-label { font-family: 'Quicksand' !important; color: #000 !important; font-weight: 800; font-size: 0.8em !important; letter-spacing: 0.075em; text-transform: uppercase; }
 
 
 
@@ -165,14 +168,14 @@ div.picker-opts { margin-top: -82px !important; }
 .sc-ion-card-md-h { background: #fff !important; letter-spacing: 0.025em; font-weight: 600; color: #000; }
 
 .native-input.sc-ion-input-ios,
-.native-input.sc-ion-input-md { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; }
+.native-input.sc-ion-input-md { font-family: 'Quicksand' !important; font-weight: 600 !important; }
 
 ion-select,
-ion-select-option { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; }
+ion-select-option { font-family: 'Quicksand' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; }
 
 ion-badge { border-radius: 50%; width: 25px; height: 25px; padding: 7px 0; font-size: 0.75em; font-weight: bold; }
 
-.sc-ion-label-md-s h2 { font-family: 'FuturaLT Light' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; color: #001D7E !important; }
+.sc-ion-label-md-s h2 { font-family: 'Quicksand' !important; font-weight: 600 !important; letter-spacing: 0.015em !important; color: #001D7E !important; }
 
 ion-card-title { color: #001d7e !important; }
 

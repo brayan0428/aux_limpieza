@@ -2,8 +2,30 @@
 
 <ion-content>
   <app-title-page title="Mis Servicios"></app-title-page>
+  <ion-card *ngIf="servicios.length <= 0">
+    <ion-card-header>
+      <ion-card-title>Sin servicios</ion-card-title>
+      <ion-card-subtitle>
+        Actualmente no cuentas con servicios solicitados
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngFor="let servicio of servicios">
+    <ion-card-header>
+      <ion-card-title>Servicio # {{servicio.id}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label><b>Fecha Servicio: </b> {{servicio.fecha_servicio}}</ion-label>
+      <br />
+      <ion-label><b>Hora Inicio: </b></ion-label> {{servicio.hora_inicio}}<br />
+      <ion-label><b>Dirección: </b> {{servicio.direccion}}</ion-label> <br />
+      <ion-label><b>Ciudad: </b></ion-label> {{servicio.ciudad}} <br />
+      <ion-label><b>Valor: </b> {{servicio.valor}}</ion-label> <br />
+      <ion-label><b>Estado: </b> {{servicio.estado}}</ion-label>
+    </ion-card-content>
+  </ion-card>
   <app-fab-whatsapp></app-fab-whatsapp>
 </ion-content>
 
 <app-footer></app-footer>
-
