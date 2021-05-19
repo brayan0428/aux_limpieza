@@ -3,7 +3,7 @@
 <ion-content>
   <app-title-page title="Usuarios Asociados"></app-title-page>
   <ion-content padding>
-    <ion-card *ngFor="let user of usuarios" (click)="mostrarModal(user.id)">
+    <ion-card *ngFor="let user of usuarios" (click)="mostrarModal(user.id)" class="bloques-usuarios-asociados">
       <ion-card-content>
         <h3>{{user.nombre}}</h3>
         <p>{{user.telefono}}</p>

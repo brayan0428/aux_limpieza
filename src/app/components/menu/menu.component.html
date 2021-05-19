@@ -10,50 +10,53 @@
     <ion-list>
       <ion-menu-toggle *ngIf="!userLogged">
         <ion-item routerLink="/home">
-          <img src="../../assets/aux-003.svg" width="120" height="120" class="icono-menu">
+          <img src="../../assets/aux-app-perfil.svg" width="120" height="120" class="icono-menu">
           <ion-label>Inicio</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle *ngIf="userLogged">
         <ion-item routerLink="/mi-perfil">
-          <img src="../../assets/aux-003.svg" width="120" height="120" class="icono-menu">
+          <img src="../../assets/aux-app-perfil.svg" width="120" height="120" class="icono-menu">
           <ion-label>Mi Perfil</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="/solicitar-servicio">
-          <img src="../../assets/aux-001.svg" width="120" height="120" class="icono-menu">
+          <img src="../../assets/aux-app-solicitar.svg" width="120" height="120" class="icono-menu">
           <ion-label>Solicitar Servicio</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="/lista-de-precios">
-          <img src="../../assets/aux-002.svg" width="120" height="120" class="icono-menu">
+          <img src="../../assets/aux-app-precios.svg" width="120" height="120" class="icono-menu">
           <ion-label>Lista de Precios</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="/grupos-servicios-especiales">
-          <img src="../../assets/aux-006.svg" width="120" height="120" class="icono-menu">
+          <img src="../../assets/aux-app-especializados.svg" width="120" height="120" class="icono-menu">
           <ion-label>Especializados</ion-label>
         </ion-item>
       </ion-menu-toggle>
 
       <ion-menu-toggle *ngIf="userLogged">
         <ion-item routerLink="/mis-servicios">
-          <ion-icon name="home" slot="start"></ion-icon>
+          <!-- <ion-icon name="home" slot="start"></ion-icon> -->
+          <img src="../../assets/aux-app-servicios.svg" width="120" height="120" class="icono-menu">
           <ion-label>Mis Servicios</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle *ngIf="userLogged">
         <ion-item routerLink="/usuarios-asociados">
-          <ion-icon name="home" slot="start"></ion-icon>
+          <!-- <ion-icon name="home" slot="start"></ion-icon> -->
+          <img src="../../assets/aux-app-asociados.svg" width="120" height="120" class="icono-menu">
           <ion-label>Usuarios Asociados</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle *ngIf="userLogged" (click)="CerrarSesion()">
         <ion-item>
-          <ion-icon name="home" slot="start"></ion-icon>
+          <!-- <ion-icon name="home" slot="start"></ion-icon> -->
+          <img src="../../assets/aux-app-log-out.svg" width="120" height="120" class="icono-menu">
           <ion-label>Cerrar Sesión</ion-label>
         </ion-item>
       </ion-menu-toggle>
