@@ -115,9 +115,9 @@ ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp ion-label#texto-whatsapp { 
 ion-fab#zona-whatsapp ion-fab-button#activa-whatsapp:host(.ion-color) .button-native { box-shadow: none; }
 
 ion-grid#grid-servicios { display: block; background: url(assets/aux-bg-servicios.png) no-repeat 50% -50px; background-size: cover; padding: 0; height: auto; }
-ion-grid#grid-servicios ion-row.fila-servicios { height: 565px !important; display: block !important; padding: 3% !important; }
+ion-grid#grid-servicios ion-row.fila-servicios { height: 850px !important; display: block !important; padding: 3% !important; }
 
-ion-grid#grid-servicios ion-row.fila-servicios ion-col { width: 50% !important; height: auto; display: block; margin: 4%; float: left; }
+ion-grid#grid-servicios ion-row.fila-servicios ion-col { width: 50% !important; height: auto; display: inline-block; margin: 4%; float: left; }
 /*
 ion-grid#grid-servicios ion-row.fila-servicios ion-col:nth-child(1) { margin-left: 7%; }
 ion-grid#grid-servicios ion-row.fila-servicios ion-col:nth-child(3) { margin-left: 7%; }
@@ -223,6 +223,8 @@ ion-card.card-precios ion-card-content hr { width: 90%; height: 1px; display: bl
 .sc-ion-card-md-h { margin-bottom: 55px !important; background: #fff !important; }
 .sc-ion-card-ios-h { margin-bottom: 25px !important; background: #fff !important; }
 
+app-confirmar-solicitud .sc-ion-card-md-h { border-left: solid 4px #001263; margin: 0 auto 15px !important; border-radius: 0 !important; }
+
 .sc-ion-card-md-s img { width: 100% !important; }
 
 ion-icon[name="star"] { color: #001d7e !important; }
@@ -234,13 +236,18 @@ ion-text.md.hydrated { color: #000; font-weight: 600; text-align: center; float:
 
 .bloques-mis-servicios ion-card-header { padding: 5% 8%; font-size: 1em; line-height: 1em; letter-spacing: 0.075em; background: #222; }
 .bloques-mis-servicios ion-card-header ion-card-title { color: #fff !important; font-size: 1em; letter-spacing: 0.15em; }
-
 .sc-ion-card-md-h.bloques-mis-servicios { margin: 20px !important; border-bottom: solid 2px #001d7e !important; }
 
 
 
-.sc-ion-card-md-h.bloques-usuarios-asociados { margin: 20px auto !important; border-bottom: solid 2px #001d7e !important; }
+.sc-ion-card-md-h.bloques-usuarios-asociados { margin: 0 auto !important; border-bottom: solid 2px #001d7e !important; }
 .sc-ion-card-md-h.bloques-usuarios-asociados h3 { font-size: 1.75em; line-height: 1em; color: #222 !important; padding: 3px 0 15px; font-weight: 600; margin: 0; }
+
+
+
+#row-boxes-providers ion-card-title { font-weight: 900 !important; line-height: 1em !important; }
+#row-boxes-providers .sc-ion-card-md-h { margin: 0 auto 25px !important; }
+
 
 
 #registro-hazlo-aqui { width: 90%; height: auto; display: block; margin: 5px auto 0 auto; float: none; position: relative; background: #001d7e !important; border-radius: 5px; color: #fff; text-decoration: none; font-size: 0.9em; line-height: 1em; font-weight: 600; padding: 10px 0; text-align: center; letter-spacing: 0.035em; transition: all 0.3s ease-in; }
@@ -265,7 +272,22 @@ ion-card.card-tyc ion-card-content p.texto-indentado { padding: 0 0 0 10px; }
 
 
 
+@media only screen and (max-width: 599px){
+  ion-grid#grid-servicios ion-row.fila-servicios { height: 900px !important; }
+}
 
+@media only screen and (max-width: 429px){
+  ion-grid#grid-servicios ion-row.fila-servicios { height: 770px !important; }
+}
 
+@media only screen and (max-width: 399px){
+  ion-grid#grid-servicios ion-row.fila-servicios { height: 750px !important; }
+}
 
+@media only screen and (max-width: 379px){
+  ion-grid#grid-servicios ion-row.fila-servicios { height: 720px !important; }
+}
 
+@media only screen and (max-width: 349px){
+  ion-grid#grid-servicios ion-row.fila-servicios { height: 690px !important; }
+}
